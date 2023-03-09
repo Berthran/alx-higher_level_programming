@@ -1,9 +1,8 @@
 #!/usr/bin/python3
-import add_0
+from add_0 import add
 
 
 def main():
-    add = add_0.add
     a = 1
     b = 2
     print("a + b = {}".format(add(a, b)))
