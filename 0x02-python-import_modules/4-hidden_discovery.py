@@ -6,7 +6,7 @@ def main():
     namespace = dir(hidden_4)
     no_of_names = len(namespace)
     for i in range(no_of_names):
-        if namespace[i].startswith("_") == False:
+        if namespace[i].startswith("_") is False:
             print("{}".format(namespace[i]))
 
 
