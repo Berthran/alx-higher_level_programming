@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 import calculator_1
+
+
 def main():
     a = 10
     b = 5
@@ -11,6 +13,7 @@ def main():
     print("a - b = {}".format(sub(a, b)))
     print("a * b = {}".format(mul(a, b)))
     print("a / b = {}".format(div(a, b)))
+
 
 if __name__ == "__main__":
     main()
