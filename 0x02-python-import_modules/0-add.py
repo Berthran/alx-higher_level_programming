@@ -4,7 +4,9 @@ import add_0
 
 def main():
     add = add_0.add
-    print("1 + 2 = {}".format(add(1, 2)))
+    a = 1
+    b = 2
+    print("a + b = {}".format(add(a, b)))
 
 
 if __name__ == "__main__":
