@@ -1,7 +1,12 @@
 #!/usr/bin/python3
-import add_0
+from add_0 import add
+
+
 def main():
-    add = add_0.add
-    print("1 + 2 = {}".format(add(1,2)))
+    a = 1
+    b = 2
+    print("{} + {} = {}".format(a, b, add(a, b)))
+
+
 if __name__ == "__main__":
     main()
