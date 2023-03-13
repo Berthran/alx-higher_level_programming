@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-import random
+
 
 def print_list_integer(my_list=[]):
     no_elements = len(my_list)
     for i in range(no_elements):
-        print("{}".format(my_list[i]), end="")
+        print("{}".form(my_list[i]), end="")
     return (0)
 
 if __name__ == "__main__":
