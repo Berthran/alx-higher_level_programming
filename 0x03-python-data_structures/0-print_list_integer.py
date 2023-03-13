@@ -4,7 +4,7 @@
 def print_list_integer(my_list=[]):
     no_elements = len(my_list)
     for i in range(no_elements):
-        printf("{}\n".format(my_list[i]))
+        print("{}\n".format(my_list[i]))
     return (0)
 
 
