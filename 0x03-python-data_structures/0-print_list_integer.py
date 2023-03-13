@@ -1,6 +1,3 @@
-#!/usr/bin/python32
-
-
 def print_list_integer(my_list=[]):
     no_elements = len(my_list)
     for i in range(no_elements):
