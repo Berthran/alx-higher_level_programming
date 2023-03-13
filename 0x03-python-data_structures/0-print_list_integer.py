@@ -3,5 +3,5 @@
 def print_list_integer(my_list=[]):
     no_elements = len(my_list)
     for i in range(no_elements):
-        print("{}".format(my_list[i]))
+        print(f"{my_list[i]}")
 
