@@ -5,6 +5,7 @@ def print_reversed_list_integer(my_list=[]):
     list_range = len(my_list)
     for i in range(1, list_range + 1):
         print("{:d}".format(my_list[-i]))
+    return (0)
 
 
 if __name__ == "__main__":
