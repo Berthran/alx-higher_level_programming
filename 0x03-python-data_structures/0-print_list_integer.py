@@ -7,5 +7,6 @@ def print_list_integer(my_list=[]):
         print("{i}".format(i=my_list[i]))
     return (0)
 
+
 if __name__ == "__main__":
-    print_list_integer(my_list=[])
+    print_list_integer()
