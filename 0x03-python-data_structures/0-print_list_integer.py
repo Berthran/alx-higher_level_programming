@@ -4,7 +4,7 @@
 def print_list_integer(my_list=[]):
     no_elements = len(my_list)
     for i in range(no_elements):
-        print("{i}".format(i=my_list[i]))
+        print("{0:d}".format(my_list[i]))
     return (0)
 
 
