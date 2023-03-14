@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+
 def max_integer(my_list=[]):
     len_of_list = len(my_list)
     max_num = 0
@@ -7,7 +8,8 @@ def max_integer(my_list=[]):
     if len_of_list == 0:
         return(None)
 
-    for i in range(len_of_list):
+    max_num = my_list[0]
+    for i in range(1, len_of_list):
         if max_num < my_list[i]:
             max_num = my_list[i]
     return(max_num)
