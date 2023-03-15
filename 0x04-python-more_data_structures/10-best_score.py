@@ -1,19 +1,20 @@
 #!/usr/bin/python3
 
 def best_score(a_dictionary):
-    ''' returns the key of the dictionary with the highest value '''
+    ''' Returns dictionary key with highes value'''
     if a_dictionary is None:
         return (None)
-    first_key = list(a_dictionary)[0]
-    prev_score = a_dictionary.get(first_key)
-    if prev_score is None:
-        return (None)
-    best_key = ""
+
+    key_list = list(a_dictionary)
+    value_list = [a_dictionary[key] for key in key_list]
+    for val in value_list:
+        if val is None:
+            value_list[value_list.index(val)] = 0
+    value_list.sort()
+    max_value = value_list[-1]
+
     for key in a_dictionary:
-        if a_dictionary.get(key) is None:
-            return(None)
-        value = a_dictionary.get(key)
-        if value >= prev_score:
-            best_key = key
-            prev_score = value
-    return (best_key)
+        val = a_dictionary.get(key)
+        if val is not None:
+            if val == max_value:
+                return (key)
