@@ -7,14 +7,10 @@ def best_score(a_dictionary):
 
     key_list = list(a_dictionary)
     value_list = [a_dictionary[key] for key in key_list]
-    for val in value_list:
-        if val is None:
-            value_list[value_list.index(val)] = 0
     value_list.sort()
     max_value = value_list[-1]
 
     for key in a_dictionary:
-        val = a_dictionary.get(key)
-        if val is not None:
-            if val == max_value:
-                return (key)
+        val = a_dictionary[key]
+        if val == max_value:
+            return (key)
