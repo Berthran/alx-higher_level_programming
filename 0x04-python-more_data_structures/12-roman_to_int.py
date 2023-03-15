@@ -16,4 +16,4 @@ def roman_to_int(roman_string):
             int_sum += b
         else:
             int_sum += b - (2 * a)
-    return (r_int, int_sum)
+    return (int_sum)
