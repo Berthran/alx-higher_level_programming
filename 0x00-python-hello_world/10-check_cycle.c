@@ -13,7 +13,7 @@ int check_cycle(listint_t *list)
 {
 	int i, address_counter = 1;
 	listint_t *list_crawler;
-	char **address_store = (char **)malloc(sizeof(char *));
+	char **address_store = (char **)malloc(sizeof(char *) * 1001);
 
 	if (list == NULL || address_store == NULL)
 		return (0);
