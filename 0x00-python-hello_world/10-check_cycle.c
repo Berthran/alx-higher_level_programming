@@ -11,30 +11,25 @@
 
 int check_cycle(listint_t *list)
 {
-	int i, address_counter = 1;
-	listint_t *list_crawler;
-	char **address_store = (char **)malloc(sizeof(char *) * 1001);
+	int i, node_counter = 1;
+	listint_t *node_crawler, *temp_node, *reset_node;
 
-	if (list == NULL || address_store == NULL)
+	if (list == NULL)
 		return (0);
-	list_crawler = list;
-	address_store[0] = (char *)list_crawler;
-	list_crawler = list_crawler->next;
+	node_crawler = temp_node = reset_node = list;
+	node_crawler = list->next;
 
-	while (list_crawler)
+	while (node_crawler)
 	{
-		for (i = 0; i < address_counter; i++)
+		for (i = 0; i < node_counter; i++)
 		{
-			if (address_store[i] == (char *)list_crawler)
-			{
-				free(address_store);
+			if (temp_node == node_crawler)
 				return (1); /* Cycle found */
-			}
+			temp_node = temp_node->next;
 		}
-		address_store[address_counter] = (char *)list_crawler;
-		address_counter += 1;
-		list_crawler = list_crawler->next;
+		temp_node = reset_node;
+		node_counter += 1;
+		node_crawler = node_crawler->next;
 	}
-	free(address_store);
 	return (0); /* Cycle not found */
 }
