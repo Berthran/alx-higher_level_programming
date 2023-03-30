@@ -58,6 +58,8 @@ class Square:
         if (type(self.__position) is not tuple or len(self.__position) != 2):
             raise TypeError(errmsg)
         for i in self.__position:
+            if (type(i) is not int):
+                raise TypeError(errmsg)
             if (i < 0):
                 raise TypeError(errmsg)
 
@@ -86,6 +88,8 @@ class Square:
         if (type(value) is not tuple or len(value) != 2):
             raise TypeError(errmsg)
         for i in value:
+            if (type(i) is not int):
+                raise TypeError(errmsg)
             if (i < 0):
                 raise TypeError(errmsg)
         self.__position = value
