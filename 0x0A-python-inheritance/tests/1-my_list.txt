@@ -1,0 +1,55 @@
+# 1-my_list.txt
+
+Testing module '1-my_list.py'
+
+Test Areas
+1. Create instance of  MyList
+2. Check various list methods on instance of MyList
+3. IndexError
+
+>>> MyList = __import__('1-my_list').MyList
+>>> my_list = MyList()
+>>> my_list = MyList()
+>>> my_list.append(1)
+>>> my_list.append(4)
+>>> my_list.append(2)
+>>> my_list.append(3)
+>>> my_list.append(5)
+>>> print(my_list)
+[1, 4, 2, 3, 5]
+>>> my_list.print_sorted()
+[1, 2, 3, 4, 5]
+>>> print(my_list)
+[1, 4, 2, 3, 5]
+>>> my_list[0]
+1
+>>> my_list[-1]
+5
+>>> my_list[-3]
+2
+>>> my_list.pop()
+5
+>>> my_list
+[1, 4, 2, 3]
+>>> my_list.append(5)
+>>> my_list
+[1, 4, 2, 3, 5]
+>>> for i in my_list:
+...     print(i)
+...
+1
+4
+2
+3
+5
+>>> my_list[my_list.index(my_list[-1]) + 1]
+Traceback (most recent call last):
+  ...
+IndexError: list index out of range
+>>> my_list2 = MyList()
+>>> my_list2 = my_list[:-2]
+>>> my_list2
+[1, 4, 2]
+>>> my_list3 = my_list + my_list2
+>>> my_list3
+[1, 4, 2, 3, 5, 1, 4, 2]
