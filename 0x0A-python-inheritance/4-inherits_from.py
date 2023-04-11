@@ -8,6 +8,6 @@ Methods:
 
 def inherits_from(obj, a_class):
     '''Returns True if "obj" is instance of "a_class"'''
-    if (isinstance(obj, a_class) and issubclass(a_class, a_class)):
+    if (type(obj) is not a_class and isinstance(obj, a_class)):
         return (True)
     return (False)
