@@ -53,3 +53,7 @@ IndexError: list index out of range
 >>> my_list3 = my_list + my_list2
 >>> my_list3
 [1, 4, 2, 3, 5, 1, 4, 2]
+>>> isinstance(my_list, MyList)
+True
+>>> isinstance(my_list2, MyList)
+False
