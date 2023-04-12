@@ -1,10 +1,18 @@
 #!/usr/bin/python3
-'''Class Inheritance.
+'''
+Class Inheritance.
 
 A samplification of single inheritance in Python.
 
 Classes:
     Rectangle : creates a rectangle using BaseGeometry class
+
+Typical Example Usage:
+    >>> r1 = Rectangle(4, 5)
+    >>> print(r1.area())
+    20
+    >>> print(r1)
+    [Rectangle] 4/5
 
 '''
 
@@ -12,9 +20,12 @@ BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 
 class Rectangle(BaseGeometry):
-    '''Creates a rectangle using attributes from BaseGeometry
+    '''
+    Creates a rectangle using attributes from BaseGeometry.
 
     Attributes:
+        width : width of rectangle
+        height : height of rectangle
         integer_validator : validates to be an integer
 
     Methods:
@@ -22,7 +33,8 @@ class Rectangle(BaseGeometry):
     '''
 
     def __init__(self, width, height):
-        '''Instantiates class with required attributes
+        '''
+        Instantiates class with required attributes.
 
         Parameters:
             width: width of rectangle (private property)
