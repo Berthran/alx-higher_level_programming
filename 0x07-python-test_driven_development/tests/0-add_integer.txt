@@ -1,0 +1,88 @@
+"""
+This is the test file for the 0-add_integer module.
+
+The 0-add_interger module supplies two functions:
+check_num_type() 
+add_integer()
+
+For example:
+#######################################
+ONE ARGUMENT TESTS
+#######################################
+>>> add_integer = __import__('0-add_integer').add_integer
+>>> # no arguments I
+>>> add_integer()
+Traceback (most recent call last):
+    ...
+TypeError: add_integer() missing 1 required positional argument: 'a'
+>>>
+>>> # one valid argument I
+>>> add_integer(1)
+99
+>>> # one valid argument II
+>>> add_integer(2.7)
+100
+>>> # one valid argument III
+>>> add_integer(-20)
+78
+>>> 
+>>> # one invalid argument I
+>>> add_integer(True)
+Traceback (most recent call last):
+   ...
+TypeError: a must be an integer
+>>> # one invalid argument II
+>>> add_integer('98')
+Traceback (most recent call last):
+   ...
+TypeError: a must be an integer
+>>> # one invalid argument III'
+>>> add_integer(None)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+>>>
+
+############################################
+TWO ARGUMENT TESTS
+############################################
+>>> # valid two arguments I
+>>> add_integer(1, 4)
+5
+>>> # valid two arguments II
+>>> add_integer(30, 2.2)
+32
+>>> # valid two arguments III
+>>> add_integer(30, -2.2)
+28
+>>>
+>>> # invalid two argumens I
+>>> add_integer(1, 'b')
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
+>>> # invalid two argumens II
+>>> add_integer(1, 5+2j)
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
+>>> # invalid two arguments III
+>>> add_integer(1, (2,4))
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
+>>> # invalid two arguments IV
+>>> add_integer("68", 68)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+>>> # invalid two arguments V
+>>> add_integer(68, None)
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
+>>> # invalid two arguments VI
+>>> add_integer(None, 68)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
