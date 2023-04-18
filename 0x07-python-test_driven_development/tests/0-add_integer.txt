@@ -25,11 +25,6 @@ TypeError: add_integer() missing 1 required positional argument: 'a'
 >>> # one valid argument III
 >>> add_integer(-20)
 78
->>> # one valid argument correct output
->>> if (add_integer(2) == 100):
-...	return(True)
-... return(False)
-True 
 >>> # one invalid argument I
 >>> add_integer(True)
 Traceback (most recent call last):
@@ -90,3 +85,4 @@ TypeError: b must be an integer
 Traceback (most recent call last):
 ...
 TypeError: a must be an integer
+
