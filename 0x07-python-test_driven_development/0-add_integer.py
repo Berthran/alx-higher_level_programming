@@ -23,7 +23,7 @@ def check_num_type(num1, num2, dtype=[int, float]):
 
     checklist = [1, 1]
     a_type, b_type = type(num1), type(num2)
-    if (a_type is dtype[0] or a_type is dtype[1]):
+    if num1 is not None or (a_type is dtype[0] or a_type is dtype[1]):
         checklist[0] = 0
     if (b_type is dtype[0] or b_type is dtype[1]):
         checklist[1] = 0
