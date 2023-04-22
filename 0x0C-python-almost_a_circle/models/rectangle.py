@@ -77,5 +77,5 @@ class Rectangle(Base):
 
     @y.setter
     def y(self, value):
-        self.validate_type("y", value))
+        self.validate_type("y", value)
         self.__y = y
