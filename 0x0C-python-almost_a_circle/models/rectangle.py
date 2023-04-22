@@ -15,6 +15,9 @@ class Rectangle(Base):
         height : height of rectangle, private
         x : value of x for the rectangle, private
         y : value of y for the rectangle, private
+    Methods:
+        validate_attr : validates an instance attribute for type and value
+        area : calculates and returns the area of the rectangle
     '''
 
     def __init__(self, width, height, x=0, y=0, id=None):
@@ -28,17 +31,6 @@ class Rectangle(Base):
         self.__height = height
         self.__x = x
         self.__y = y
-
-    def validate_attr(self, attribute, value, val_comp=">"):
-        '''Validates the type and value of instance attributes'''
-        if type(value) is not int:
-            raise TypeError("{} must be an integer".format(attribute))
-        if (val_comp == ">"):
-            if (value <= 0):
-                raise ValueError("{} must be {} 0".format(attribute, val_comp))
-        if (val_comp == ">="):
-            if (value < 0):
-                raise ValueError("{} must be {} 0".format(attribute, val_comp))
 
     @property
     def width(self):
@@ -79,3 +71,18 @@ class Rectangle(Base):
     def y(self, value):
         self.validate_attr("y", value, ">=")
         self.__y = value
+
+    def validate_attr(self, attribute, value, val_comp=">"):
+        '''Validates the type and value of instance attributes'''
+        if type(value) is not int:
+            raise TypeError("{} must be an integer".format(attribute))
+        if (val_comp == ">"):
+            if (value <= 0):
+                raise ValueError("{} must be {} 0".format(attribute, val_comp))
+        if (val_comp == ">="):
+            if (value < 0):
+                raise ValueError("{} must be {} 0".format(attribute, val_comp))
+
+    def area(self):
+        '''Calculates the area of the rectangle'''
+        return (self.__width * self.__height)
