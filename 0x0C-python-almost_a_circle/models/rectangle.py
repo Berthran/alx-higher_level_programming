@@ -15,18 +15,19 @@ class Rectangle(Base):
         height : height of rectangle, private
         x : value of x for the rectangle, private
         y : value of y for the rectangle, private
-        '''
+    '''
+
     def __init__(self, width, height, x=0, y=0, id=None):
         '''Initializes an instance of a rectangle'''
         super().__init__(id)
-        if (not self.validate_attr("width", width)):
-            self.__width = width
-        if (not self.validate_attr("height", height)):
-            self.__height = height
-        if (not self.validate_attr("x", x, ">=")):
-            self.__x = x
-        if (not self.validate_attr("y", y, ">=")):
-            self.__y = y
+        self.validate_attr("width", width)
+        self.validate_attr("height", height)
+        self.validate_attr("x", x, ">=")
+        self.validate_attr("y", y, ">=")
+        self.__width = width
+        self.__height = height
+        self.__x = x
+        self.__y = y
 
     def validate_attr(self, attribute, value, val_comp=">"):
         '''Validates the type and value of instance attributes'''
@@ -46,8 +47,8 @@ class Rectangle(Base):
 
     @width.setter
     def width(self, value):
-        if (not self.validate_type("width", value)):
-            self.__width = value
+        self.validate_type("width", value)
+        self.__width = value
 
     @property
     def height(self):
@@ -56,8 +57,8 @@ class Rectangle(Base):
 
     @height.setter
     def height(self, value):
-        if (not self.validate_type("height", value)):
-            self.__height = value
+        self.validate_type("height", value)
+        self.__height = value
 
     @property
     def x(self):
@@ -66,8 +67,8 @@ class Rectangle(Base):
 
     @x.setter
     def x(self, value):
-        if (not self.validate_type("x", value)):
-            self.__x = value
+        self.validate_type("x", value)
+        self.__x = value
 
     @property
     def y(self):
@@ -76,5 +77,5 @@ class Rectangle(Base):
 
     @y.setter
     def y(self, value):
-        if (not self.validate_type("y", value)):
-            self.__y = y
+        self.validate_type("y", value))
+        self.__y = y
