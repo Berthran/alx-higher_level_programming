@@ -93,3 +93,7 @@ class Rectangle(Base):
         cols = self.__width
         for i in range(rows):
             print("#" * cols)
+
+    def __str__(self):
+        """Print formatted output of the class"""
+        return ("[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x, self.__y, self.__width, self.__height))
