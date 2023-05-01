@@ -91,8 +91,10 @@ class Rectangle(Base):
         '''Displays a rectangle with "#"'''
         rows = self.__height
         cols = self.__width
+        if (self.__y != 0):
+            print("\n" * (self.__y - 1))
         for i in range(rows):
-            print("#" * cols)
+            print(" " * self.__x + "#" * cols)
 
     def __str__(self):
         """Print formatted output of the class"""
