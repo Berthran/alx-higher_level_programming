@@ -91,10 +91,14 @@ class Rectangle(Base):
         '''Displays a rectangle with "#"'''
         rows = self.__height
         cols = self.__width
+        if (self.__y != 0):
+            print("\n" * (self.__y - 1))
         for i in range(rows):
-            print("#" * cols)
+            print(" " * self.__x + "#" * cols)
 
     def __str__(self):
-        '''Prints a formated output of a rectangle'''
-        return (f"({self.id}) {self.__x}/{self.__y} /\
-                - {self.__width}/{self.__height}")
+        """Print formatted output of the class"""
+        return ("[Rectangle] ({}) {}/{} - "
+                "{}/{}".format(self.id, self.__x,
+                               self.__y, self.__width,
+                               self.__height))
