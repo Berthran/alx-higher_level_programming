@@ -3,7 +3,7 @@
 
 This is a repository of the solutions to the `0x00. Python - Hello, World` student project of the ALX Software Engineering Programme.
 
-The objective for this is to be able to explain clearly the following:
+The objective of this project is to learn and be able to explain clearly the following:
 * Why Python programming is awesome
 * Who created Python
 * Who is Guido van Rossum
@@ -17,15 +17,15 @@ The objective for this is to be able to explain clearly the following:
 
 Each task in the project is solved in either a script or a program file.
 
-### Shell Scripts and their Functions
+### Shell/Python Scripts and their Functions
 
-| Scripts	| Function	|
-|:--------------:| :-------- 	|
+| Scripts	  | Function	|
+|:--------------| :-------- 	|
 | 0-run		| runs a Python script |
 | 1-run_inline	| runs Python code |
 | 2-print.py	| prints exactly "Programming is like building a multilingual puzzle, followed by a new line|
-|
-|
+| 3-print_number.py | Complete this [source code](https://github.com/holbertonschool/0x00.py/blob/master/3-print_number.py) in order to print the integer stored in the variable number, followed by Battery street, followed by a new line |
+| 4-print_float.py | Complete the [source code](https://github.com/holbertonschool/0x00.py/blob/master/4-print_float.py) in order to print the float stored in the variable number with a precision of 2 digits. |
 |
 |
 |
