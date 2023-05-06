@@ -24,9 +24,9 @@ Each task in the project is solved in either a script or a program file.
 | 0-run		| runs a Python script |
 | 1-run_inline	| runs Python code |
 | 2-print.py	| prints exactly "Programming is like building a multilingual puzzle, followed by a new line|
-| 3-print_number.py | Complete this [source code](https://github.com/holbertonschool/0x00.py/blob/master/3-print_number.py) in order to print the integer stored in the variable number, followed by Battery street, followed by a new line |
-| 4-print_float.py | Complete the [source code](https://github.com/holbertonschool/0x00.py/blob/master/4-print_float.py) in order to print the float stored in the variable number with a precision of 2 digits. |
-|
-|
-|
+| 3-print_number.py | completes this [source code](https://github.com/holbertonschool/0x00.py/blob/master/3-print_number.py) in order to print the integer stored in the variable number, followed by Battery street, followed by a new line |
+| 4-print_float.py | complete this [source code](https://github.com/holbertonschool/0x00.py/blob/master/4-print_float.py) in order to print the float stored in the variable number with a precision of 2 digits. |
+| 5-print_string.py | completes this [source code](https://github.com/holbertonschool/0x00.py/blob/master/5-print_string.py) in order to print 3 times a string stored in the variable str, followed by its first 9 characters. |
+| 6-concat.py | completes this [source code](https://github.com/holbertonschool/0x00.py/blob/master/6-concat.py) to print Welcome to Holberton School! |
+| 7-edges.py | Complete this [source code] to produce <img title=this /> result |
 |
