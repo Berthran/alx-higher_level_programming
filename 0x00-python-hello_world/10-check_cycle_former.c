@@ -16,20 +16,27 @@ int check_cycle(listint_t *list)
 
 	if (list == NULL)
 		return (0);
+	printf("\nChecking for Cycle...\n");
 	node_crawler = temp_node = reset_node = list;
+	printf("Address of node crawler %p\n", (void*)node_crawler);
 	node_crawler = list->next;
 
 	while (node_crawler)
 	{
+		printf("Address of node crawler %p\n", (void*)node_crawler);
 		for (i = 0; i < node_counter; i++)
 		{
 			if (temp_node == node_crawler)
+			{
+				printf("Cycle found...\n\n");
 				return (1); /* Cycle found */
+			}
 			temp_node = temp_node->next;
 		}
 		temp_node = reset_node;
 		node_counter += 1;
 		node_crawler = node_crawler->next;
 	}
+	printf("Cycle not found...\n\n");
 	return (0); /* Cycle not found */
 }
