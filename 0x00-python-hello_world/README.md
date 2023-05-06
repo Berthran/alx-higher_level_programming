@@ -28,5 +28,5 @@ Each task in the project is solved in either a script or a program file.
 | 4-print_float.py | complete this [source code](https://github.com/holbertonschool/0x00.py/blob/master/4-print_float.py) in order to print the float stored in the variable number with a precision of 2 digits. |
 | 5-print_string.py | completes this [source code](https://github.com/holbertonschool/0x00.py/blob/master/5-print_string.py) in order to print 3 times a string stored in the variable str, followed by its first 9 characters. |
 | 6-concat.py | completes this [source code](https://github.com/holbertonschool/0x00.py/blob/master/6-concat.py) to print Welcome to Holberton School! |
-| 7-edges.py | Complete this [source code] to produce <img title=this /> result |
+| 7-edges.py | Complete this [source code] to produce <img src="https://github.com/Berthran/alx-higher_level_programming/blob/master/0x00-python-hello_world/7-edges_result.jpg" title=this /> result |
 |
