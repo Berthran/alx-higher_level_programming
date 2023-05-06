@@ -20,7 +20,10 @@ int check_cycle(listint_t *list)
 	node_crawler = list->next;
 
 	if (node_crawler == NULL)
-		return (1); /* One node so no cycle */
+		return (0); /* One node no cycle */
+
+	if (node_crawler == temp_node)
+		return (1); /* One node with cycle */
 
 	if (node_crawler > temp_node)
 	{
