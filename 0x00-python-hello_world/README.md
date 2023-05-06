@@ -17,9 +17,11 @@ The objective of this project is to learn and be able to explain clearly the fol
 
 Each task in the project is solved in either a script or a program file.
 
+--------------------------------------------------------
+
 ### Shell Scripts
 
-How to Run:
+##### How to Run:
 `./script_name` e.g `./101-compile`
 
 | Scripts	  | Function	|
@@ -28,9 +30,11 @@ How to Run:
 | 1-run_inline	| runs Python code |
 | 100-compile   | compiles a Python script file |
 
+--------------------------------------------------------
+
 ### Python Scripts and their Functions
 
-How to Run:
+##### How to Run:
 `./script_name` e.g `./100-write.py`
 
 | Scripts	  | Function	|
@@ -45,26 +49,32 @@ How to Run:
 | 9-easter_egg.py | prints “The Zen of Python”, by TimPeters, followed by a new line. |
 | 100-write.py |  prints exactly and that piece of art is useful - Dora Korpar, 2015-10-19, followed by a new line. |
 
+--------------------------------------------------------
 
 ### Python Programs and their Functions
 | Program	  | Function	|
 |:--------------| :-------- 	|
 | 102-magic_calculation.py | does exactly the same as the [following Python bytecode](https://github.com/Berthran/alx-higher_level_programming/blob/master/0x00-python-hello_world/images/102-magic_result.jpg) |
 
-How to run
+##### How to run
 ```
 >>> magic_calc = __import__("102-magic_calculation").magic_calculation
 >>> import dis
 >>> dis.dis(magic_calc) # This shows the bytecode in a human readable form corresponding to that shown above
 ```
 
+--------------------------------------------------------
+
 ### C Programs and their Functions
 | Program	  | Function	|
 |:--------------| :-------- 	|
 | 10-check_cycle.c | checks if a singly linked list has a cycle in it |
 
-How to run
-To run this move the files `10-main.c` and `10-linked_lists.c` from the `test_for_10-check_cycle` folder to the parent folder. Then run this: 
+##### How to run
+To run this move the files `10-main.c` and `10-linked_lists.c` from the `test_for_10-check_cycle` folder to the parent folder. 
+
+Then run this:
+
 `gcc -Wall -Werror -Wextra -pedantic -std=gnu89 10-main.c 10-check_cycle.c 10-linked_lists.c -o cycle`
 
 
