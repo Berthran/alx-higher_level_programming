@@ -93,3 +93,8 @@ class Rectangle(Base):
         cols = self.__width
         for i in range(rows):
             print("#" * cols)
+
+    def __str__(self):
+        '''Prints a formated output of a rectangle'''
+        return (f"({self.id}) {self.__x}/{self.__y} /\
+                - {self.__width}/{self.__height}")
