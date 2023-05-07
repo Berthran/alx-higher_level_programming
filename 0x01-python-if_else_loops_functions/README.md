@@ -70,7 +70,7 @@ Each task in the project is solved in either a script or a program file.
 | 13-insert_number.c |  inserts a number into a sorted singly linked list. |
 
 ##### How to run
-To run this move the files `13-main.c` and `linked_lists.c` from the `for_13-insert_number` folder to the parent folder. 
+To run this move the files `13-main.c` and `linked_lists.c` from the `for-13-insert_number` folder to the parent folder. 
 
 Then run this:
 
