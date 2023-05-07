@@ -16,7 +16,7 @@ listint_t *insert_node(listint_t **head, int number)
 	int n, node_counter = 1;
 	listint_t *new_node = (listint_t *)malloc(sizeof(listint_t));
 
-	if (*head == NULL || new_node == NULL)
+	if (*head == NULL || head == NULL || new_node == NULL )
 		return (NULL);
 
 	node_crawler = *head;
