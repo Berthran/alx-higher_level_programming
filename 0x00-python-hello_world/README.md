@@ -32,7 +32,7 @@ Each task in the project is solved in either a script or a program file.
 
 --------------------------------------------------------
 
-### Python Scripts and their Functions
+### Python Scripts
 
 ##### How to Run:
 `./script_name` e.g `./100-write.py`
@@ -51,7 +51,7 @@ Each task in the project is solved in either a script or a program file.
 
 --------------------------------------------------------
 
-### Python Programs and their Functions
+### Python Programs
 | Program	  | Function	|
 |:--------------| :-------- 	|
 | 102-magic_calculation.py | does exactly the same as the [following Python bytecode](https://github.com/Berthran/alx-higher_level_programming/blob/master/0x00-python-hello_world/images/102-magic_result.PNG) |
@@ -65,7 +65,7 @@ Each task in the project is solved in either a script or a program file.
 
 --------------------------------------------------------
 
-### C Programs and their Functions
+### C Programs
 | Program	  | Function	|
 |:--------------| :-------- 	|
 | 10-check_cycle.c | checks if a singly linked list has a cycle in it |
