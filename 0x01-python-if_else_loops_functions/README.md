@@ -53,7 +53,7 @@ Each task in the project is solved in either a script or a program file.
 | 10-add.py |  adds two integers and returns the result. |
 | 11-pow.py | computes a to the power of b and return the value. |
 | 12-fizzbuzz.py | prints the numbers from 1 to 100 separated by a space. |
-| 102-magic_calculation.py | does exactly the same as the [following Python bytecode](https://github.com/Berthran/alx-higher_level_programming/blob/master/0x00-python-hello_world/images/102-magic_result_2.PNG) |
+| 102-magic_calculation.py | does exactly the same as the [following Python bytecode](https://github.com/Berthran/alx-higher_level_programming/blob/master/0x01-python-if_else_loops_functions/images/102-magic_result_2.PNG.jpg) |
 
 ##### How to run
 ```
@@ -75,6 +75,7 @@ To run this move the files `13-main.c` and `linked_lists.c` from the `for_13-ins
 Then run this:
 
 `gcc -Wall -Werror -Wextra -pedantic -std=gnu89 13-main.c 13-insert_number.c linked_lists.c -o insert`
+
 `./insert`
 
 
