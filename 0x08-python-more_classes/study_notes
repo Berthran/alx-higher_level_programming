@@ -1,0 +1,9 @@
+* The key difference is that __str__ is for user-friendly output, while __repr__ is for developer-friendly output. __str__ is called by the str() function, and __repr__ is called by the repr() function and used in debugging.
+
+* A class method is a method bound to the class and not the instance. It can access and modify class attributes but not instance attributes. It's defined using the @classmethod decorator.
+
+* A static method is a method that doesn't depend on the class or instance state. It's defined using the @staticmethod decorator
+
+* __dict__ is a dictionary containing the namespace of a class or instance, which includes all its attributes.
+
+* The getattr function is used to access an attribute of an object by name
