@@ -1,0 +1,17 @@
+### Use of __import__ to perform import module in parent folder.
+
+Relative imports are intended for use within packages and won't work in standalone scripts that are not part of a package.
+
+If you want to import a module located in a different directory, you should use an absolute import rather than a relative one.
+
+
+```
+import sys
+sys.path.append('/path/to/1-rectangle')  # Replace with the actual path
+
+module_name = "1-rectangle"  # Use the module name without relative path
+Rectangle = __import__(module_name).Rectangle
+```
+
+### Use of @property and @x.setter
+A method which is used for getting a value is decorated with "@property", i.e. we put this line directly in front of the header. The method which has to function as the setter is decorated with "@x.setter". If the function had been called "f", we would have to decorate it with "@f.setter".
