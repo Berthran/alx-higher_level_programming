@@ -10,7 +10,7 @@ args = sys.argv
 
 # Check number of arguments
 if (len(args) != 2):
-    print("Usage: nqeens N")
+    print("Usage: nqueens N")
     exit(1)
 
 # Converting argument from str to int
