@@ -6,6 +6,6 @@ sys.path.append("/home/danlinux/new-ALX_SE/alx-higher_level_programming/0x08-pyt
 
 Rectangle = __import__('9-rectangle').Rectangle
 
-my_square = Rectangle.square(5)
+my_square = Rectangle.square("7")
 print("Area: {} - Perimeter: {}".format(my_square.area(), my_square.perimeter()))
 print(my_square)
