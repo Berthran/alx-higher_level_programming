@@ -3,5 +3,3 @@
 class Rectangle():
 
     pass
-
-
