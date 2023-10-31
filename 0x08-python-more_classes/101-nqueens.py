@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+'''
+Solving the chess NxN queen placement problem
+'''
 
 import sys
 
@@ -21,9 +24,9 @@ if (N < 4):
     print("N must be at least 4")
     exit(1)
 else:
-    list_1 = [] # A chess position
-    list_2 = [] # A list of NxN chess positions
-    
+    list_1 = []  # A chess position
+    list_2 = []  # A list of NxN chess positions
+
     # Creating a list of NxN chess positions
     for i in range(N):
         for j in range(N):
@@ -35,13 +38,13 @@ else:
         sol_no = N - 2
     else:
         sol_no = N // 2
-    
+
     for i in range(sol_no):
         small_move = i + 1
         big_move = N + small_move + 1
         sol_list = []
         move = small_move
-        
+
         while (True):
             sol_list.append(list_2[move])
             if (sol_list[-1][0] == N - 1):
