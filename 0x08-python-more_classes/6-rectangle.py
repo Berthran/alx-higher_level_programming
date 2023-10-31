@@ -1,4 +1,8 @@
-#!/usr/bin/python3
+#!/usr/bin/python3A
+'''
+Class that defines a rectangle
+'''
+
 
 class Rectangle():
 
@@ -22,7 +26,7 @@ class Rectangle():
     @width.setter
     def width(self, value):
         '''Assigns a new value to width'''
-        if (type(value) is not int): 
+        if (type(value) is not int):
             raise TypeError("width must be an integer")
         elif (value < 0):
             raise ValueError("width must be >= 0")
@@ -50,16 +54,16 @@ class Rectangle():
     def __str__(self):
         '''Depicts the size of the rectangle'''
         if (self.__width == 0 or self.__height == 0):
-            return("")
+            return ("")
         row_hash = "#" * self.__width
         return ((row_hash + "\n") * (self.__height - 1) + row_hash)
 
     def __repr__(self):
-        '''Displays string representation of instance in developer-friendly way'''
-        return(f"Rectangle({self.__width}, {self.__height})")
+        '''Displays str rep of instance in developer-friendly way'''
+        return (f"Rectangle({self.__width}, {self.__height})")
 
     def __del__(self):
         '''Handles the deletion of an instance'''
         Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
-        del(self)
+        del (self)

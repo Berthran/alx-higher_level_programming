@@ -1,4 +1,8 @@
-#!/usr/bin/python3
+#!/usr/bin/python3A
+'''
+Class that defines a rectangle
+'''
+
 
 class Rectangle():
 
@@ -23,7 +27,7 @@ class Rectangle():
     @width.setter
     def width(self, value):
         '''Assigns a new value to width'''
-        if (type(value) is not int): 
+        if (type(value) is not int):
             raise TypeError("width must be an integer")
         elif (value < 0):
             raise ValueError("width must be >= 0")
@@ -51,29 +55,29 @@ class Rectangle():
     def __str__(self):
         '''Depicts the size of the rectangle'''
         if (self.__width == 0 or self.__height == 0):
-            return("")
+            return ("")
 
         row = str(self.print_symbol) * self.__width
         return ((row + "\n") * (self.__height - 1) + row)
 
     def __repr__(self):
-        '''Displays string representation of instance in developer-friendly way'''
-        return(f"Rectangle({self.__width}, {self.__height})")
+        '''Displays str rep of instance in developer-friendly way'''
+        return (f"Rectangle({self.__width}, {self.__height})")
 
     def __del__(self):
         '''Handles the deletion of an instance'''
         Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
-        del(self)
+        del (self)
 
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
         '''Determines which area is bigger'''
         if (rect_1.__class__.__name__ != "Rectangle"):
             raise TypeError("rect_1 must be an instance of Rectangle")
-        elif (rect_2.__class__.__name__ != "Rectangle"):
+        if (rect_2.__class__.__name__ != "Rectangle"):
             raise TypeError("rect_2 must be an instance of Rectangle")
-        elif (rect_1.area() > rect_2.area()) or (rect_1.area() == rect_2.area()):
+        if (rect_1.area() > rect_2.area()) or (rect_1.area() == rect_2.area()):
             return (rect_1)
         return (rect_2)
 
