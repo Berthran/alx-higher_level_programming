@@ -1,5 +1,10 @@
 #!/usr/bin/python3
 
+'''
+Class that defines a Rectangle
+'''
+
+
 class Rectangle():
 
     def __init__(self, width=0, height=0):
