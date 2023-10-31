@@ -6,5 +6,6 @@ Class that defines a rectangle
 
 
 class Rectangle():
+    '''Class specifications'''
 
     pass
