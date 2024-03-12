@@ -5,8 +5,8 @@ number = random.randint(-10000, 10000)
 if (number >= 0):
     last_digit = number % 10
 elif (number < 0):
-    new_num = number * -1
-    last_digit = -(new_num % 10)
+    #new_num = number * -1
+    last_digit = -(-number % 10)
 
 
 if (last_digit == 0):
