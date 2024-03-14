@@ -14,7 +14,7 @@ def main():
     else:
         print("{} arguments:".format(no_argv))
         for i, j in enumerate(argv[1:]):
-            print("{}: {}".format(i, j))
+            print("{}: {}".format(i + 1, j))
 
 
 if __name__ == "__main__":
