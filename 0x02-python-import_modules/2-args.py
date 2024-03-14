@@ -13,9 +13,8 @@ def main():
         print("1: {}".format(argv[1]))
     else:
         print("{} arguments:".format(no_argv))
-        for i in range(1, no_argv + 1):
-            print("{}: {}".format(i, argv[i]))
-            i += 1
+        for i, j in enumerate(argv[1:]):
+            print("{}: {}".format(i, j))
 
 
 if __name__ == "__main__":
