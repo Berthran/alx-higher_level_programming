@@ -12,7 +12,7 @@ def main():
     if no_argv > 0:
         for i in range(1, no_argv + 1):
             sum += int(argv[i])
-    
+
     print("{}".format(sum))
 
 
