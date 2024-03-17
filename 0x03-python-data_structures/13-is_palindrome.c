@@ -1,6 +1,6 @@
-#include "lists.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include "lists.h"
 
 int compare_list(listint_t *l1, listint_t *l2, int n);
 
