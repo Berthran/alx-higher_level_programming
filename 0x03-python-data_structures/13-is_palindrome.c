@@ -1,6 +1,8 @@
 #include "lists.h"
 #include <stdio.h>
 
+int count_nodes(const listint_t *h);
+
 int compare_list(listint_t *l1, listint_t *l2, int n);
 
 /**
