@@ -93,6 +93,7 @@ int compare_list(listint_t *l1, listint_t *l2, int n)
 		c1 = c1->next;
 		c2 = l2;
 	}
+	free_listint(l2);
 	return (1);
 }
 
