@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+int compare_list(listint_t *l1, listint_t *l2, int n);
+
 /**
  * count_nodes - counts nodes
  * @h: pointer to head of list
@@ -10,15 +12,19 @@
 
 int count_nodes(const listint_t *h)
 {
-        const listint_t *current;                                  int n; /* number of nodes */                       
-        current = h;
-        n = 0;
-        while (current != NULL)
-        {
-                current = current->next;
-                n++;
-        }                                                          return (n);                                        }
+	const listint_t *current;
+	int n;
 
+	current = h;
+	n = 0;
+
+	while (current != NULL)
+	{
+		current = current->next;
+		n++;
+	}
+	return (n);
+}
 
 /**
  * is_palindrome - checks if a singly linked list is a palindrome
@@ -29,54 +35,63 @@ int count_nodes(const listint_t *h)
 
 int is_palindrome(listint_t **head)
 {
-	int i, j,  nodes, nodes_split;
-	listint_t *current, *crawler;
-	listint_t *list_half;
+	int i,  nodes, nodes_split;
+	listint_t *crawler, *first_half, *second_half;
 
 	if (*head == NULL)
 		return (1);
 
+	/* Palindrome has to have even nodes */
 	nodes = count_nodes(*head);
 	nodes_split = nodes / 2;
-	
 	if (nodes % 2 != 0)
 		return (0);
 
-	current = *head;
-	list_half = (listint_t *)malloc(sizeof(listint_t));
+	first_half = crawler = *head;
 
-	if (list_half == NULL)
-		return (0);
 	for (i = 1; i < nodes_split; ++i)
-		current = current->next;
+		crawler = crawler->next;
 
-	list_half = current->next;
-	current->next = NULL;
-	/*printf("list_half\n");
-	print_listint(list_half);
-	printf("Head list\n");
-	print_listint(*head);*/
+	second_half = crawler->next;
+	crawler->next = NULL;
 
-	current = NULL;
-	crawler = list_half;
-
-	for (i = 0; i < nodes_split; ++i)
-	{
-		for (j = 0; j < (nodes_split - i - 1); ++j)
-		{
-			printf("@ i %d j % d \n", i, j);
-			print_listint(crawler++);
-		}
-		
-		current = add_nodeint_end(&crawler, crawler->n);
-		printf("\n================\ncurrent list\n");
-		print_listint(current);
-		crawler = list_half;
-	}
-
-
+	if (compare_list(first_half, second_half, nodes_split) == 0)
+		return (0);
 	return (1);
 }
 
 
+/**
+ * compare_list - compares the value of two linked lists
+ * @l1: the first linked list
+ * @l2: the second linked list
+ * @n: the number of nodes in each list
+ *
+ * Return: 1 if all the nodes have thesame value for both linked lists
+ */
+
+int compare_list(listint_t *l1, listint_t *l2, int n)
+{
+	int i, j, n1, n2;
+	listint_t *c1, *c2;
+
+	c1 = l1;
+	c2 = l2;
+
+	for (i = 0; i < n; i++)
+	{
+		n1 = c1->n;
+		for (j = 0; j < (n - i - 1); j++)
+			c2 = c2->next;
+
+		n2 = c2->n;
+
+		if (n1 != n2)
+			return (0);
+
+		c1 = c1->next;
+		c2 = l2;
+	}
+	return (1);
+}
 
