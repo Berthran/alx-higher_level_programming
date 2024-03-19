@@ -20,7 +20,7 @@ int compare_list(listint_t *head, int n_nodes);
 
 int count_nodes(const listint_t *h)
 {
-	const listint_t *current;
+	/*const listint_t *current;
 	int n;
 
 	current = h;
@@ -30,8 +30,10 @@ int count_nodes(const listint_t *h)
 	{
 		current = current->next;
 		n++;
-	}
-	return (n);
+	}*/
+	if (h == NULL)
+		return (0);
+	return (1 + count_nodes(h->next));
 }
 
 /**
