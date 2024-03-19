@@ -12,7 +12,7 @@ int compare_even(listint_t *head, int nodes);
 
 int compare_list(listint_t *head, int n_nodes);
 
-listint_t *reverse_list(listint_t *head);
+listint_t *reverse_list(listint_t **head);
 
 /**
  * count_nodes - counts nodes
@@ -45,25 +45,39 @@ int count_nodes(const listint_t *h, int count)
  * Return: a reversed linked list
  */
 
-listint_t *reverse_list(listint_t *head)
+int is_palindrome(listint_t **head)
 {
 	listint_t *current, *prev, *next;
+	int num[1024], i = 0, j = 0, split, m, n;
 
-	if (head == NULL)
-		return (NULL);
+	if (*head == NULL)
+		return (1);
+	if ((*head)->next == NULL)
+		return (1);
 
 	prev = next = NULL;
-	current = head;
+	current = *head;
 
 	while (current !=  NULL)
 	{
+		num[i++] = current->n;
 		next = current->next;
 		current->next = prev;
 		prev = current;
 		current = next;
 	}
-	head = prev;
-	return (head);
+	split = i / 2;
+
+	while (prev != NULL && j < split)
+	{
+		m = num[j];
+                n = prev->n;
+                if (m != n)
+                        return (0);
+                prev = prev->next;
+		j++;
+        }
+	return (1);
 }
 
 
@@ -74,31 +88,45 @@ listint_t *reverse_list(listint_t *head)
  * Return: 0 if it is not a palindrome, 1 if it is a palindrome
  */
 
-int is_palindrome(listint_t **head)
-{
-	/*listint_t *crawler; * *first_half, *second_half;*/
+/*{
+	*listint_t *crawler; * *first_half, *second_half;*/
 	/*int nodes = 0;*/
-	int i, j;
-	listint_t *reverse, *forward, *backward;
+	/*int i, j;
+	static listint_t *reverse;
+	listint_t *forward, *backward;
+	(void)reverse;
 
-	/* Empty list is a palindrome */
+	* Empty list is a palindrome *
 	if (*head == NULL)
 		return (1);
 
-	/*nodes = count_nodes(*head);*/
+	*nodes = count_nodes(*head);*/
 	/*nodes = count_nodes(*head, nodes);*/
 	/* List with one item is a palindrome */
-	if ((*head)->next == NULL)
+	/*if ((*head)->next == NULL)
 		return (1);
 
-	reverse = forward = *head;
-	reverse = reverse_list(reverse);
+	*head = reverse_list(head);
+	exit(98);
 	backward = reverse;
+
+	while (*head != NULL)
+	{
+		printf("head->n = %d\n", (*head)->n);
+		*head = (*head)->next;
+	}
+	while (reverse != NULL)
+        {
+                printf("reverse->n = %d\n", reverse->n);
+                reverse = reverse->next;
+        }
+	exit(98);
 
 	while (forward != NULL)
 	{
 		i = forward->n;
 		j = backward->n;
+		printf("i = %d, j = %d\n", i, j);
 		if (i != j)
 			return (0);
 		forward = forward->next;
@@ -106,7 +134,7 @@ int is_palindrome(listint_t **head)
 	}
 	return (1);
 
-	/* Determine if nodes are even or odd
+	* Determine if nodes are even or odd
 	if (nodes % 2 == 0)
 		is_p = compare_even(*head, nodes);
 	else
@@ -126,7 +154,6 @@ int is_palindrome(listint_t **head)
 		return (0);
 	return (1);
 	return (is_p);*/
-}
 
 
 /**
