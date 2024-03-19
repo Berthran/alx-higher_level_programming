@@ -121,7 +121,7 @@ int compare_list(listint_t *l1, listint_t *l2, int n)
 
 int compare_odd(listint_t *head, int nodes)
 {
-	listint_t *crawler, *temp; /* *first_half, *second_half;*/
+	listint_t *crawler; /* *first_half, *second_half;*/
 	int i, jump = nodes / 2;
 	int sum = 0;
 	crawler = head;
@@ -129,14 +129,9 @@ int compare_odd(listint_t *head, int nodes)
 	for (i = 0; i < nodes; i++)
 	{
 		if (i == jump)
-		{
-			if (temp->n != crawler->next->n)
-				return (0);
 			crawler = crawler->next;
-		}
 		else if (i < jump)
 		{
-			temp = crawler;
 			sum += crawler->n;
 			crawler = crawler->next;
 		}
@@ -162,7 +157,7 @@ int compare_odd(listint_t *head, int nodes)
 
 int compare_even(listint_t *head, int nodes)
 {
-	listint_t *crawler;
+	listint_t *crawler, *temp1;
 	int i, half = (nodes / 2) - 1;
 	int sum = 0;
 	crawler = head;
@@ -171,11 +166,15 @@ int compare_even(listint_t *head, int nodes)
 	{
 		if (i <= half)
 		{
+			temp1 = crawler;
 			sum += crawler->n;
 			crawler = crawler->next;
 		}
 		else if (i > half)
 		{
+			/*printf("temp1->n %d, crawler->n %d\n", temp1->n, crawler->n);*/
+			if (i == (half + 1) && (temp1->n != crawler->n))
+				return (0);
 			sum -= crawler->n;
 			crawler = crawler->next;
 		}
