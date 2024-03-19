@@ -128,7 +128,6 @@ int compare_odd(listint_t *head, int nodes)
 
 	for (i = 0; i < nodes; i++)
 	{
-		temp = crawler;
 		if (i == jump)
 		{
 			if (temp->n != crawler->next->n)
@@ -137,6 +136,7 @@ int compare_odd(listint_t *head, int nodes)
 		}
 		else if (i < jump)
 		{
+			temp = crawler;
 			sum += crawler->n;
 			crawler = crawler->next;
 		}
