@@ -121,15 +121,20 @@ int compare_list(listint_t *l1, listint_t *l2, int n)
 
 int compare_odd(listint_t *head, int nodes)
 {
-	listint_t *crawler; /* *first_half, *second_half;*/
+	listint_t *crawler, *temp; /* *first_half, *second_half;*/
 	int i, jump = nodes / 2;
 	int sum = 0;
 	crawler = head;
 
 	for (i = 0; i < nodes; i++)
 	{
+		temp = crawler;
 		if (i == jump)
+		{
+			if (temp->n != crawler->next->n)
+				return (0);
 			crawler = crawler->next;
+		}
 		else if (i < jump)
 		{
 			sum += crawler->n;
