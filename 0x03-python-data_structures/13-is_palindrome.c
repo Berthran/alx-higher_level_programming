@@ -1,13 +1,16 @@
 #include "lists.h"
 #include <stdio.h>
+#include <string.h>
 
 int count_nodes(const listint_t *h);
 
-int compare_list(listint_t *l1, listint_t *l2, int n);
+/*int compare_list(listint_t *l1, listint_t *l2, int n);*/
 
 int compare_odd(listint_t *head, int nodes);
 
 int compare_even(listint_t *head, int nodes);
+
+int compare_list(listint_t *head, int n_nodes);
 
 /**
  * count_nodes - counts nodes
@@ -41,7 +44,7 @@ int count_nodes(const listint_t *h)
 int is_palindrome(listint_t **head)
 {
 	/*listint_t *crawler; * *first_half, *second_half;*/
-	int nodes, is_p;
+	int nodes; /* is_p;*/
 
 	/* Empty list is a palindrome */
 	if (*head == NULL)
@@ -52,11 +55,11 @@ int is_palindrome(listint_t **head)
 	if (nodes == 1)
 		return (1);
 
-	/* Determine if nodes are even or odd */
-	if (nodes % 2 == 0) /* even */
+	/* Determine if nodes are even or odd
+	if (nodes % 2 == 0)
 		is_p = compare_even(*head, nodes);
 	else
-		is_p = compare_odd(*head, nodes);
+		is_p = compare_odd(*head, nodes);*/
 
 	/*nodes_split = (nodes / 2);
 
@@ -66,47 +69,78 @@ int is_palindrome(listint_t **head)
 		crawler = crawler->next;
 
 	second_half = crawler->next;
-	crawler->next = NULL;
+	crawler->next = NULL;*/
 
-	if (compare_list(first_half, second_half, nodes_split) == 0)
+	if (compare_list(*head, nodes) == 0)
 		return (0);
-	return (1);*/
-	return (is_p);
+	return (1);
+	/*return (is_p);*/
 }
 
 
 /**
  * compare_list - compares the value of two linked lists
- * @l1: the first linked list
- * @l2: the second linked list
- * @n: the number of nodes in each list
+ * @head: the pointer to the linked list
+ * @n_nodes: the number of nodes in each list
  *
  * Return: 1 if all the nodes have thesame value for both linked lists
  */
 
-int compare_list(listint_t *l1, listint_t *l2, int n)
+int compare_list(listint_t *head, int n_nodes)
 {
 	int i, j, n1, n2;
-	listint_t *c1, *c2;
+	listint_t *c1, *c2, *oddHalf, *evenHalf;
+	int jump = n_nodes / 2;
+	int half = (n_nodes / 2) - 1;
+	char *dtype = NULL;
+	c1 = c2 = oddHalf = evenHalf = head;
 
-	c1 = l1;
-	c2 = l2;
-
-	for (i = 0; i < n; i++)
+	if (n_nodes % 2 == 0)
 	{
-		n1 = c1->n;
-		for (j = 0; j < (n - i - 1); j++)
-			c2 = c2->next;
-
-		n2 = c2->n;
-
-		if (n1 != n2)
-			return (0);
-
-		c1 = c1->next;
-		c2 = l2;
+		dtype = "even";
+		for (i = 0; i < (half + 1); i++)
+			evenHalf = evenHalf->next;
 	}
-	free_listint(l2);
+	else
+	{
+		dtype = "odd";
+		for (i = 0; i < (jump + 1); i++)
+		       oddHalf = oddHalf->next;
+	}
+
+	if (strcmp(dtype, "odd") == 0)
+	{
+		c2 = oddHalf;
+
+		for (i = 0; i < jump; i++)
+		{
+			n1 = c1->n;
+			for (j = 0; j < (jump - i - 1); j++)
+				c2 = c2->next;
+			n2 = c2->n;
+			if (n1 != n2)
+				return (0);
+			c1 = c1->next;
+			c2 = oddHalf;
+		}
+
+	}
+	else
+	{
+		c2 = evenHalf;
+
+		for (i = 0; i < half; i++)
+		{
+			n1 = c1->n;
+			for (j = 0; j < (half - i); j++)
+				c2 = c2->next;
+			n2 = c2->n;
+			if (n1 != n2)
+				return (0);
+			c1 = c1->next;
+			c2 = evenHalf;
+		}
+	}
 	return (1);
 }
 
@@ -157,7 +191,7 @@ int compare_odd(listint_t *head, int nodes)
 
 int compare_even(listint_t *head, int nodes)
 {
-	listint_t *crawler, *temp1;
+	listint_t *crawler;
 	int i, half = (nodes / 2) - 1;
 	int sum = 0;
 	crawler = head;
@@ -166,15 +200,11 @@ int compare_even(listint_t *head, int nodes)
 	{
 		if (i <= half)
 		{
-			temp1 = crawler;
 			sum += crawler->n;
 			crawler = crawler->next;
 		}
 		else if (i > half)
 		{
-			/*printf("temp1->n %d, crawler->n %d\n", temp1->n, crawler->n);*/
-			if (i == (half + 1) && (temp1->n != crawler->n))
-				return (0);
 			sum -= crawler->n;
 			crawler = crawler->next;
 		}
