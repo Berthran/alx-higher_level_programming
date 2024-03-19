@@ -44,6 +44,8 @@ int is_palindrome(listint_t **head)
 
 	/* Palindrome has to have even nodes */
 	nodes = count_nodes(*head);
+	if (nodes == 1)
+		return (1);
 	nodes_split = nodes / 2;
 	if (nodes % 2 != 0)
 		return (0);
