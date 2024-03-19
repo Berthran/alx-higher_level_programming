@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 
-int count_nodes(const listint_t *h);
+int count_nodes(const listint_t *h, int count);
 
 /*int compare_list(listint_t *l1, listint_t *l2, int n);*/
 
@@ -12,13 +12,14 @@ int compare_even(listint_t *head, int nodes);
 
 int compare_list(listint_t *head, int n_nodes);
 
+listint_t *reverse_list(listint_t *head);
+
 /**
  * count_nodes - counts nodes
  * @h: pointer to head of list
  * Return: number of nodes
  */
-
-int count_nodes(const listint_t *h)
+int count_nodes(const listint_t *h, int count)
 {
 	/*const listint_t *current;
 	int n;
@@ -32,9 +33,39 @@ int count_nodes(const listint_t *h)
 		n++;
 	}*/
 	if (h == NULL)
-		return (0);
-	return (1 + count_nodes(h->next));
+		return (count);
+	/*return (1 + count_nodes(h->next));*/
+	return count_nodes(h->next, count + 1);
 }
+
+/**
+ * reverse_list - reverses the nodes in a singly linked list
+ * @head: the starting position of the linked list
+ *
+ * Return: a reversed linked list
+ */
+
+listint_t *reverse_list(listint_t *head)
+{
+	listint_t *current, *prev, *next;
+
+	if (head == NULL)
+		return (NULL);
+
+	prev = next = NULL;
+	current = head;
+
+	while (current !=  NULL)
+	{
+		next = current->next;
+		current->next = prev;
+		prev = current;
+		current = next;
+	}
+	head = prev;
+	return (head);
+}
+
 
 /**
  * is_palindrome - checks if a singly linked list is a palindrome
@@ -46,16 +77,34 @@ int count_nodes(const listint_t *h)
 int is_palindrome(listint_t **head)
 {
 	/*listint_t *crawler; * *first_half, *second_half;*/
-	int nodes; /* is_p;*/
+	/*int nodes = 0;*/
+	int i, j;
+	listint_t *reverse, *forward, *backward;
 
 	/* Empty list is a palindrome */
 	if (*head == NULL)
 		return (1);
 
-	nodes = count_nodes(*head);
+	/*nodes = count_nodes(*head);*/
+	/*nodes = count_nodes(*head, nodes);*/
 	/* List with one item is a palindrome */
-	if (nodes == 1)
+	if ((*head)->next == NULL)
 		return (1);
+
+	reverse = forward = *head;
+	reverse = reverse_list(reverse);
+	backward = reverse;
+
+	while (forward != NULL)
+	{
+		i = forward->n;
+		j = backward->n;
+		if (i != j)
+			return (0);
+		forward = forward->next;
+		backward = backward->next;
+	}
+	return (1);
 
 	/* Determine if nodes are even or odd
 	if (nodes % 2 == 0)
@@ -71,12 +120,12 @@ int is_palindrome(listint_t **head)
 		crawler = crawler->next;
 
 	second_half = crawler->next;
-	crawler->next = NULL;*/
+	crawler->next = NULL;
 
 	if (compare_list(*head, nodes) == 0)
 		return (0);
 	return (1);
-	/*return (is_p);*/
+	return (is_p);*/
 }
 
 
