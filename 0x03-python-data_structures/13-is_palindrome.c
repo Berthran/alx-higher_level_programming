@@ -48,7 +48,7 @@ int count_nodes(const listint_t *h, int count)
 int is_palindrome(listint_t **head)
 {
 	listint_t *current, *prev, *next;
-	int num[1024], i = 0, j = 0, split, m, n;
+	int num[2048], i = 0, j = 0, split, m, n;
 
 	if (*head == NULL)
 		return (1);
