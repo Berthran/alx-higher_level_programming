@@ -78,6 +78,6 @@ void print_python_bytes(PyObject *p)
 			printf("%02x\n", (unsigned char)str[i]);
 	}
 	else
-		printf("   [ERROr] Invalid Bytes Object\n");
+		printf("[ERROR] Invalid Bytes Object\n");
 }
 
