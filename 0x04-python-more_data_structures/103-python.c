@@ -62,6 +62,14 @@ void print_python_bytes(PyObject *p)
                  * printf("\tsize: %ld\n", byte->ob_base.ob_size);
                  * size = PyBytes_Size(p);
                  */
+
+		/* String printing */
+                printf("\ttrying string: %s\n", byte->ob_sval);
+                /**
+                 * other alternatives to attempting to print a string
+                 * printf("\ttrying string: %s\n", PyBytes_AS_STRING(p));
+                 * printf("\ttrying string: %s\n", PyBytes_AsString(p));
+                 */
 	}
 }
 
