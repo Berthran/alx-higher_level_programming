@@ -64,11 +64,11 @@ void print_python_bytes(PyObject *p)
                  */
 
 		/* String printing */
-                printf("\ttrying string: %s\n", byte->ob_sval);
+                printf("\ttrying string: %s\n", PyBytes_AsString(p));
                 /**
                  * other alternatives to attempting to print a string
                  * printf("\ttrying string: %s\n", PyBytes_AS_STRING(p));
-                 * printf("\ttrying string: %s\n", PyBytes_AsString(p));
+		 * printf("\ttrying string: %s\n", byte->ob_sval);
                  */
 	}
 }
