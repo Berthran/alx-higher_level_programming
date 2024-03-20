@@ -2,6 +2,7 @@
 /* and Python bytes object */
 
 #include <Python.h>
+#include <string.h>
 
 void print_python_bytes(PyObject *p);
 
