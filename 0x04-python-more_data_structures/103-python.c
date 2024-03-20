@@ -18,7 +18,6 @@ void print_python_list(PyObject *p)
 	Py_ssize_t size, i = 0;
 	const char *obj_type;
 	PyListObject *list = (PyListObject *)p;
-	exit(98);
 
 	printf("[*] Python list info\n");
 
@@ -26,6 +25,7 @@ void print_python_list(PyObject *p)
 	printf("[*] Size of the Python List = %ld\n", size);
 
 	printf("[*] Allocated = %ld\n", list->allocated);
+	exit(98);
 
 	while (i < size)
 	{
