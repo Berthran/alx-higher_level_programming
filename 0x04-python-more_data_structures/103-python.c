@@ -15,6 +15,8 @@ void print_python_bytes(PyObject *p);
 
 void print_python_list(PyObject *p)
 {
+	(void)p;
+	/*
 	Py_ssize_t size, i = 0;
 	const char *obj_type;
 	PyListObject *list = (PyListObject *)p;
@@ -34,6 +36,7 @@ void print_python_list(PyObject *p)
 			print_python_bytes(list->ob_item[i]);
 		++i;
 	}
+	*/
 }
 
 /**
