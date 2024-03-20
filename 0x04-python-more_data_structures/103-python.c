@@ -53,11 +53,12 @@ void print_python_bytes(PyObject *p)
 		printf("[.] bytes object info\n");
 
 		/* Size information */
-		size = PyBytes_Size(p);
+		size = byte->ob_base.ob_size;
 		printf("\tsize: %ld\n", size);
 		/**
 		 * Other alternatives to displaying the size information
 		 * printf("\tsize: %ld\n", byte->ob_base.ob_size);
+		 * size = PyBytes_Size(p);
 		 */
 
 		/* String printing */
