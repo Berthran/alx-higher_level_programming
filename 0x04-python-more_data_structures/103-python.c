@@ -55,7 +55,7 @@ void print_python_bytes(PyObject *p)
 
 		/* Size information */
 		size = byte->ob_base.ob_size;
-		printf("   size: %ld\n", size);
+		printf("   Size: %ld\n", size);
 
 		/* String printing */
 		printf("   trying string: %s\n", byte->ob_sval);
