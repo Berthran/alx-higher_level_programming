@@ -4,7 +4,7 @@
 #include <Python.h>
 #include <string.h>
 
-void print_python_bytes(PyObject *p);
+void print_python_byte(PyObject *p);
 
 /**
  * print_python_list - print basic information about the Python list
