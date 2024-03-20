@@ -18,6 +18,7 @@ void print_python_list(PyObject *p)
 	Py_ssize_t size, i = 0;
 	const char *obj_type;
 	PyListObject *list = (PyListObject *)p;
+	exit(98);
 
 	printf("[*] Python list info\n");
 
