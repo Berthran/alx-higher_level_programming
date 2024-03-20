@@ -4,7 +4,7 @@
 #include <Python.h>
 #include <string.h>
 
-void print_python_byte(PyObject *p);
+void print_python_bytes(PyObject *p);
 
 /**
  * print_python_list - print basic information about the Python list
@@ -45,17 +45,20 @@ void print_python_list(PyObject *p)
 
 void print_python_bytes(PyObject *p)
 {
-	char *str;
+	/*char *str;
 	PyBytesObject *byte = (PyBytesObject *)p;
 	Py_ssize_t size, i;
+	(void)str, (void)size, (void)i, (void)byte,*/
+	(void)p;
 
+	/*
 	if (PyBytes_Check(p) == 1)
 	{
 		printf("[.] bytes object info\n");
-
+*/
 		/* Size information */
-		size = byte->ob_base.ob_size;
-		printf("\tsize: %ld\n", size);
+		/*size = byte->ob_base.ob_size;
+		printf("\tsize: %ld\n", size);*/
 		/**
 		 * Other alternatives to displaying the size information
 		 * printf("\tsize: %ld\n", byte->ob_base.ob_size);
@@ -63,7 +66,7 @@ void print_python_bytes(PyObject *p)
 		 */
 
 		/* String printing */
-		printf("\ttrying string: %s\n", byte->ob_sval);
+		/*printf("\ttrying string: %s\n", byte->ob_sval);*/
 		/**
 		 * other alternatives to attempting to print a string
 		 * printf("\ttrying string: %s\n", PyBytes_AS_STRING(p));
@@ -71,7 +74,7 @@ void print_python_bytes(PyObject *p)
 		 */
 
 		/* Printing bytes */
-		str = byte->ob_sval;
+/*		str = byte->ob_sval;
 		if (size < 10)
 			size = size + 1;
 		else
@@ -90,6 +93,6 @@ void print_python_bytes(PyObject *p)
 	{
 		printf("[.] bytes object info\n");
 		printf("\t[ERROR] Invalid Bytes Object\n");
-	}
+	}*/
 }
 
