@@ -45,24 +45,25 @@ void print_python_list(PyObject *p)
 
 void print_python_bytes(PyObject *p)
 {
-	char *str;
+	(void)p;
+	/*char *str;
 	PyBytesObject *byte = (PyBytesObject *)p;
 	Py_ssize_t size, i;
 
 	printf("[.] bytes object info\n");
 
 	if (PyBytes_Check(p) == 1)
-	{
+	{*/
 
 		/* Size information */
-		size = byte->ob_base.ob_size;
-		printf("size: %ld\n", size);
+		/*size = byte->ob_base.ob_size;
+		printf("size: %ld\n", size);*/
 
 		/* String printing */
-		printf("trying string: %s\n", byte->ob_sval);
+		/*printf("trying string: %s\n", byte->ob_sval);*/
 
 		/* Printing bytes */
-		str = byte->ob_sval;
+		/*str = byte->ob_sval;
 		if (size < 10)
 			size = size + 1;
 		else
@@ -78,6 +79,6 @@ void print_python_bytes(PyObject *p)
 			printf("%02x\n", (unsigned char)str[i]);
 	}
 	else
-		printf("[ERROR] Invalid Bytes Object\n");
+		printf("[ERROR] Invalid Bytes Object\n");*/
 }
 
