@@ -49,9 +49,10 @@ void print_python_bytes(PyObject *p)
 	PyBytesObject *byte = (PyBytesObject *)p;
 	Py_ssize_t size, i;
 
+	printf("[.] bytes object info\n");
+
 	if (PyBytes_Check(p) == 1)
 	{
-		printf("[.] bytes object info\n");
 
 		/* Size information */
 		size = byte->ob_base.ob_size;
@@ -77,9 +78,6 @@ void print_python_bytes(PyObject *p)
 			printf("%02x\n", (unsigned char)str[i]);
 	}
 	else
-	{
-		printf("[.] bytes object info\n");
-		printf("   [ERROR] Invalid Bytes Object\n");
-	}
+		printf("   [ERROr] Invalid Bytes Object\n");
 }
 
