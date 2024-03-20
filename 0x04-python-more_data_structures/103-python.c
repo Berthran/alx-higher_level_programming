@@ -25,7 +25,6 @@ void print_python_list(PyObject *p)
 	printf("[*] Size of the Python List = %ld\n", size);
 
 	printf("[*] Allocated = %ld\n", list->allocated);
-	exit(98);
 
 	while (i < size)
 	{
