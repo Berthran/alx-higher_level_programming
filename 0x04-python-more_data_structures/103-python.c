@@ -47,7 +47,7 @@ void print_python_bytes(PyObject *p)
 {
 	(void)p;
 	printf("[.] bytes object info\n");
-	printf("[ERROR] Invalid Bytes Object\n");
+	printf("  [ERROR] Invalid Bytes Object\n");
 	/*char *str;
 	PyBytesObject *byte = (PyBytesObject *)p;
 	Py_ssize_t size, i;
