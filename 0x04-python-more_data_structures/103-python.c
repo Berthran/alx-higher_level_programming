@@ -55,10 +55,10 @@ void print_python_bytes(PyObject *p)
 
 		/* Size information */
 		size = byte->ob_base.ob_size;
-		printf("\tsize: %ld\n", size);
+		printf("   size: %ld\n", size);
 
 		/* String printing */
-		printf("\ttrying string: %s\n", byte->ob_sval);
+		printf("   trying string: %s\n", byte->ob_sval);
 
 		/* Printing bytes */
 		str = byte->ob_sval;
@@ -67,7 +67,7 @@ void print_python_bytes(PyObject *p)
 		else
 			size = size - ((size / 10) - 1) * 10;
 
-		printf("\tfirst %ld bytes: ", size);
+		printf("   first %ld bytes: ", size);
 
 		for (i = 0; i < size - 1; i++)
 			printf("%02x ", (unsigned char)str[i]);
@@ -79,7 +79,7 @@ void print_python_bytes(PyObject *p)
 	else
 	{
 		printf("[.] bytes object info\n");
-		printf("\t[ERROR] Invalid Bytes Object\n");
+		printf("   [ERROR] Invalid Bytes Object\n");
 	}
 }
 
