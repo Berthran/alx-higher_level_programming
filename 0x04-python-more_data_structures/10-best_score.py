@@ -2,15 +2,18 @@
 
 def best_score(a_dictionary):
     ''' Returns dictionary key with highes value'''
-    if a_dictionary is None:
+    dic = a_dictionary
+    if dic is None:
         return (None)
 
-    key_list = list(a_dictionary)
-    value_list = [a_dictionary[key] for key in key_list]
-    value_list.sort()
-    max_value = value_list[-1]
+    keys = list(dic)
+    vals = [dic[key] for key in keys if type(dic[key]) is int]
+    if (len(vals) == 0):
+        return (None)
+    vals.sort()
+    max_val = vals[-1]
 
-    for key in a_dictionary:
-        val = a_dictionary[key]
-        if val == max_value:
+    for key in dic:
+        val = dic[key]
+        if val == max_val:
             return (key)
