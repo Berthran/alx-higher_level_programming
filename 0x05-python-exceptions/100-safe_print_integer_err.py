@@ -2,10 +2,11 @@
 
 import sys
 
+# 8 11 14
 
 def safe_print_integer_err(value):
     try:
-        print("{:d}".format(value))
+        print("Number: {:d}".format(value))
         return (True)
     except ValueError as vexc:
         print("Exception: ", vexc, file=sys.stderr)
