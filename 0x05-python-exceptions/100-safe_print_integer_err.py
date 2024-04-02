@@ -9,6 +9,7 @@ def safe_print_integer_err(value):
         return (True)
     except ValueError as vexc:
         print("Exception: ", vexc, file=sys.stderr)
+        return (False)
     except TypeError as texc:
         print("Exception: ", texc, file=sys.stderr)
-    return (False)
+        return (False)
