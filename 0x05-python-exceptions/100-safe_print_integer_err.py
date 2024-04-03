@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 
 import sys
-from contextlib import redirect_stdout
 
 
 def safe_print_integer_err(value):
@@ -10,5 +9,5 @@ def safe_print_integer_err(value):
         return (True)
     except Exception as exc:
         with redirect_stdout(sys.stderr):
-            print("Exception: ", exc)
+            print("Exception: {}".format(exc), file=sys.stderr)
         return (False)
