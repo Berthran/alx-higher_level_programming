@@ -106,7 +106,7 @@ void print_python_float(PyObject *p)
 
 	if (PyFloat_Check(p))
 	{
-		printf("  value: %.*f\n", PyFloat_AsDouble(p));
+		printf("  value: %f\n", PyFloat_AsDouble(p));
 	}
 	else
 		printf("  [ERROR] Invalid Float Object\n");
