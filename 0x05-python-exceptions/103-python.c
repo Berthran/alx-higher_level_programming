@@ -58,6 +58,8 @@ void print_python_bytes(PyObject *p)
 	PyBytesObject *byte = (PyBytesObject *)p;
 	Py_ssize_t size, i;
 
+	setbuf(stdout, NULL);
+
 	printf("[.] bytes object info\n");
 
 	if (PyBytes_Check(p) == 1)
@@ -75,7 +77,7 @@ void print_python_bytes(PyObject *p)
 		if (size < 10)
 			size = size + 1;
 		else
-			size = size - ((size / 10) - 1) * 10;
+			size = 10;
 
 		printf("  first %ld bytes: ", size);
 
