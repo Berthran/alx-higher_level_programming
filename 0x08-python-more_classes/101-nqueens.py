@@ -38,9 +38,9 @@ else:
         sol_no = N - 2
     else:
         sol_no = N // 2
-    if (N == 4):
+    if (N == 6):
         exit(2)
-        
+
     for i in range(sol_no):
         small_move = i + 1
         big_move = N + small_move + 1
