@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 '''
-A simplr Python module that defines a rectangle
+A simple Python module that defines a rectangle using OOP
 
 Class:
     Rectangle: a simple representation of a rectangle using OOP
