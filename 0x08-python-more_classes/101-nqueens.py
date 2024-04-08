@@ -10,7 +10,7 @@ args = sys.argv
 
 # Check number of arguments
 if (len(args) != 2):
-    print("Usage: nqueens N")
+    print("Usages: nqueens N")
     exit(1)
 
 # Converting argument from str to int
@@ -38,7 +38,7 @@ else:
         sol_no = N - 2
     else:
         sol_no = N // 2
-    if (N == 4):
+    if (N > 4):
         exit(2)
 
     for i in range(sol_no):
