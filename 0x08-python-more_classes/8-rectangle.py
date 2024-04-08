@@ -1,16 +1,20 @@
 #!/usr/bin/python3A
 '''
-Class that defines a rectangle
+A simple Python module that defines a rectangle using OOP
+
+Class:
+    Rectangle: a simple representation of a rectangle using OOP
 '''
 
 
 class Rectangle():
-    '''Class specifications'''
+    '''A simple OOP representation that defines a Rectangle'''
 
     number_of_instances = 0
     print_symbol = "#"
 
     def __init__(self, width=0, height=0):
+        '''Initialize a rectangle object'''
         self.width = width
         self.height = height
         Rectangle.number_of_instances += 1
@@ -51,6 +55,8 @@ class Rectangle():
 
     def perimeter(self):
         '''Computes the perimeter of the rectanle'''
+        if (self.__height == 0 or self.__width == 0):
+            return (0)
         return (2 * (self.__width + self.__height))
 
     def __str__(self):
@@ -74,10 +80,14 @@ class Rectangle():
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
         '''Determines which area is bigger'''
-        if (rect_1.__class__.__name__ != "Rectangle"):
+        if (not isinstance(rect_1, Rectangle)):
             raise TypeError("rect_1 must be an instance of Rectangle")
-        if (rect_2.__class__.__name__ != "Rectangle"):
+        if (not isinstance(rect_2, Rectangle)):
             raise TypeError("rect_2 must be an instance of Rectangle")
+        # if (rect_1.__class__.__name__ != "Rectangle"):
+        #    raise TypeError("rect_1 must be an instance of Rectangle")
+        # if (rect_2.__class__.__name__ != "Rectangle"):
+        #    raise TypeError("rect_2 must be an instance of Rectangle")
         if (rect_1.area() > rect_2.area()) or (rect_1.area() == rect_2.area()):
             return (rect_1)
         return (rect_2)
