@@ -1,13 +1,17 @@
 #!/usr/bin/python3
 '''
-Class that defines a rectangle
+A simple Python module that defines a rectangle using OOP
+
+Class:
+    Rectangle: a simple representation of a rectangle using OOP
 '''
 
 
 class Rectangle():
-    '''Class specifications'''
+    '''A simple OOP representation that defines a Rectangle'''
 
     def __init__(self, width=0, height=0):
+        '''Initialize a rectangle object'''
         self.width = width
         self.height = height
 
