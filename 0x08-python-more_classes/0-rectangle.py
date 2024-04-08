@@ -1,11 +1,13 @@
 #!/usr/bin/python3
-
 '''
-Class that defines a rectangle
+A simplr Python module that defines a rectangle
+
+Class:
+    Rectangle: a simple representation of a rectangle using OOP
 '''
 
 
 class Rectangle():
-    '''Class specifications'''
+    '''A smple OOP representation that defines a Rectangle'''
 
     pass
