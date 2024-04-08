@@ -10,14 +10,14 @@ args = sys.argv
 
 # Check number of arguments
 if (len(args) != 2):
-    print("Usages: nqueens N")
+    print("Usage: nqueens N")
     exit(1)
 
 # Converting argument from str to int
 try:
     N = int(args[1])
 except Exception:
-    print("N must be a number")
+    print("N must be a numbers")
     exit(1)
 
 if (N < 4):
