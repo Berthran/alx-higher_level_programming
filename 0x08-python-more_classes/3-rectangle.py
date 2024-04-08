@@ -1,13 +1,17 @@
 #!/usr/bin/python3
 '''
-Class that defines a rectangle
+A simple Python module that defines a rectangle using OOP
+
+Class:
+    Rectangle: a simple representation of a rectangle using OOP
 '''
 
 
 class Rectangle():
-    '''Class specifications'''
+    '''A simple OOP representation that defines a Rectangle'''
 
     def __init__(self, width=0, height=0):
+        '''Initialize a rectangle object'''
         self.width = width
         self.height = height
 
@@ -47,6 +51,8 @@ class Rectangle():
 
     def perimeter(self):
         '''Computes the perimeter of the rectanle'''
+        if (self.__width == 0 or self.__height == 0):
+            return (0)
         return (2 * (self.__width + self.__height))
 
     def __str__(self):
