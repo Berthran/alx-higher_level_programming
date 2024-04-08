@@ -17,11 +17,11 @@ if (len(args) != 2):
 try:
     N = int(args[1])
 except Exception:
-    print("N must be a numbers")
+    print("N must be a number")
     exit(1)
 
 if (N < 4):
-    print("N must be at least 4")
+    print("N must be at least 5")
     exit(1)
 else:
     list_1 = []  # A chess position
