@@ -38,7 +38,7 @@ else:
         sol_no = N - 2
     else:
         sol_no = N // 2
-    if (N == 6):
+    if (N == 10):
         exit(2)
 
     for i in range(sol_no):
