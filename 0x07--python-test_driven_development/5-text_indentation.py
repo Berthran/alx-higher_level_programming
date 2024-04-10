@@ -18,7 +18,7 @@ def text_indentation(text):
     Return: Nothing
     """
 
-    sepChar = [".", "?", ":"]
+    sepChar = (".", "?", ":")
     line = ""
 
     if (type(text) is not str):
@@ -31,3 +31,5 @@ def text_indentation(text):
             print("\n")
         else:
             line += letter
+    if (line.endswith(sepChar) == False):
+        print(line.lstrip(), end="")
