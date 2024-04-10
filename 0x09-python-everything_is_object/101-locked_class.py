@@ -14,6 +14,6 @@ class LockedClass():
         A function that handles dynamic setting of instance attributes
         '''
         if (name != "first_name"):
-            err_msg = f"'LockedClass' Object has no attribute {name}"
+            err_msg = f"'LockedClass' object has no attribute '{name}'"
             raise AttributeError(err_msg)
         super().__setattr__(name, value)
