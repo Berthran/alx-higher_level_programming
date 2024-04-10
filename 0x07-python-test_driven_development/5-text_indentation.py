@@ -31,5 +31,5 @@ def text_indentation(text):
             print("\n")
         else:
             line += letter
-    if (line.endswith(sepChar) == False):
+    if (line.endswith(sepChar) is False):
         print(line.lstrip(), end="")
