@@ -18,3 +18,23 @@ What is your name?
 <BLANKLINE>
 Thanks
 >>>
+>>> text_indentation("Hello...")
+Hello.
+<BLANKLINE>
+.
+<BLANKLINE>
+.
+<BLANKLINE>
+>>> text_indentation("Hello")
+Hello
+>>> text_indentation(". ?  :")
+.
+<BLANKLINE>
+?
+<BLANKLINE>
+:
+<BLANKLINE>
+>>> text_indentation("                       Hello People:")
+Hello People:
+<BLANKLINE>
+>>>
