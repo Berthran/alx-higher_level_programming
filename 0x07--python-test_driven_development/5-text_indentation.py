@@ -25,9 +25,9 @@ def text_indentation(text):
         raise TypeError("text must be a string")
     for letter in text:
         if (letter in sepChar):
-            line += letter 
+            line += letter
             print(line.lstrip(), end="")
             line = ""
             print("\n")
         else:
-            line += letter 
+            line += letter
