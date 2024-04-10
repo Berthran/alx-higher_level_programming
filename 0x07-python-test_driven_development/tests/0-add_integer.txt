@@ -32,6 +32,14 @@
 ...
 cannot convert float infinity to integer
 >>>
+>>> import math
+>>> try:
+... 	print(add_integer(math.nan))
+... except Exception as e:
+... 	print(e)
+...
+cannot convert float NaN to integer
+>>>
 >>> try: # one string argument
 ...     print(add_integer("Hello"))
 ... except Exception as e:
