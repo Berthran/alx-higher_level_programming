@@ -1,3 +1,3 @@
 #!/usr/bin/python3
-def magic_string(): magic_string.n += 1; return ("{}{}".format("Best School, " * magic_string.n, "Best School"))
+def magic_string(): magic_string.n += 1; return ("{}{}".format("BestSchool, " * magic_string.n, "BestSchool"))
 magic_string.n = -1
