@@ -128,3 +128,12 @@ matrix_divided() missing 1 required positional argument: 'div'
 ...     print(e)
 ...
 matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
+>>>
+>>>
+>>> #12 Float overflow
+>>> try:
+...     print(matrix_divided([[1,2], [4,5]], 1e309))
+... except Exception as e:
+...     print(e)
+...
+[[0.0, 0.0], [0.0, 0.0]]
