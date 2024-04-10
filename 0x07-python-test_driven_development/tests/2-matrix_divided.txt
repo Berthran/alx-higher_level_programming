@@ -109,3 +109,22 @@ div must be a number
 ... except Exception as e:
 ...	print(e)
 division by zero
+>>>
+>>>
+>>> #10 One argument
+>>> #===============
+>>> try:
+...     print(matrix_divided([[1,2], [4,5]]))
+... except Exception as e:
+...     print(e)
+...
+matrix_divided() missing 1 required positional argument: 'div'
+>>>
+>>>
+>>> #11 No argument
+>>> try:
+...     print(matrix_divided())
+... except Exception as e:
+...     print(e)
+...
+matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
