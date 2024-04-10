@@ -25,6 +25,13 @@
 95
 >>> print(add_integer(-0.78))
 98
+>>> try:
+... 	print(add_integer(1e309))
+... except Exception as e:
+... 	print(e)
+...
+cannot convert float infinity to integer
+>>>
 >>> try: # one string argument
 ...     print(add_integer("Hello"))
 ... except Exception as e:
