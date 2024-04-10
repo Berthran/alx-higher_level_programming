@@ -16,5 +16,14 @@ class LockedClass():
         if (name != "first_name"):
             err_msg = f"'LockedClass' object has no attribute '{name}'"
             raise AttributeError(err_msg)
-        if not hasattr(self, name):
-            super().__setattr__(name, value)
+        super().__setattr__(name, value)
+
+    def __getattribute__(self, name):
+        '''
+        A function that handles extracting the value of attributes
+        '''
+        if (name != "first_name"):
+            err_msg = f"'LockedClass' object has no attribute '{name}'"
+            raise AttributeError(err_msg)
+        else:
+            super().__getattribute__(name)
