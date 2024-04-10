@@ -1,0 +1,16 @@
+>>> from doctest_customer import Customer
+>>> customer_1 = Customer("John", "Brad", 5000)
+>>> customer_2 = Customer("Tina", "Smith", 3000)
+>>> customer_1.customer_mail()
+'John.Brad@gmail.com'
+>>> customer_2.customer_mail()
+'Tina.Smith@gmail.com'
+>>> customer_1.customer_fullname()
+'John Brad'
+>>> customer_2.customer_fullname()
+'Tina Smith'
+>>> customer_1.apply_discount()
+4750
+>>> customer_2.apply_discount()
+2850
+>>>
