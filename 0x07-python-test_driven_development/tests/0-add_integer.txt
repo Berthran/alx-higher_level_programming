@@ -1,0 +1,87 @@
+>>> add_integer = __import__('0-add_integer').add_integer
+>>>
+>>> # ONE ARGUMENTS
+>>> # =============
+>>>
+>>> print(add_integer(2)) # one +ve int
+100
+>>> print(add_integer(0))
+98
+>>> print(add_integer(1e20))
+100000000000000000098
+>>> print(add_integer((1)))
+99
+>>> print(add_integer(-78)) # one -ve int
+20
+>>> print(add_integer(-0))
+98
+>>> print(add_integer(-1e20))
+-99999999999999999902
+>>> print(add_integer(3.142857142857143)) # one +ve float
+101
+>>> print(add_integer(0.78))
+98
+>>> print(add_integer(-3.142857142857143)) # one -ve float
+95
+>>> print(add_integer(-0.78))
+98
+>>> try: # one string argument
+...     print(add_integer("Hello"))
+... except Exception as e:
+...     print(e)
+...
+a must be an integer
+>>> try: # one list argument
+...     print(add_integer([1]))
+... except Exception as e:
+...     print(e)
+...
+a must be an integer
+>>> try: # one tuple argument
+...     print(add_integer((1,)))
+... except Exception as e:
+...     print(e)
+...
+a must be an integer
+>>> try: # one dict argument
+...     print(add_integer({"1": 46}))
+... except Exception as e:
+...     print(e)
+...
+a must be an integer
+>>> try: # None argument
+...     print(add_integer(None))
+... except Exception as e:
+...     print(e)
+...
+a must be an integer
+>>>
+>>> # TWO ARGUMENTS
+>>> # =============
+>>>
+>>> print(add_integer(100.3, -2))
+98
+>>> print(add_integer(4, 7.09))
+11
+>>> print(add_integer(4, -7.09))
+-3
+>>> print(add_integer(-3.142857142857143))
+95
+>>> print(add_integer(3.142857142857143, 3.142857142857143))
+6
+>>> print(add_integer(1, 2)) # two int arguments
+3
+>>> print(add_integer(100, -2))
+98
+>>> try:
+...     print(add_integer(4, "School"))
+... except Exception as e:
+...     print(e)
+...
+b must be an integer
+>>> try:
+...     print(add_integer(None, None))
+... except Exception as e:
+...     print(e)
+...
+a must be an integer
