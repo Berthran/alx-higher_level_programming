@@ -1,0 +1,145 @@
+>>> matrix_mul = __import__('100-matrix_mul').matrix_mul
+>>>
+>>>
+>>> # Missing one argument
+>>> try:
+...     print(matrix_mul([[1,2]]))
+... except Exception as e:
+...     print(e)
+...
+matrix_mul() missing 1 required positional argument: 'm_b'
+>>>
+>>> # Missing two arguments
+>>> try:
+...     print(matrix_mul())
+... except Exception as e:
+...     print(e)
+...
+matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
+>>>
+>>>
+>>>
+>>> # Matrix is empty
+>>> # ===============
+>>> try:
+...     print(matrix_mul([], [[1,2]]))
+... except Exception as e:
+...     print(e)
+...
+m_a can't be empty
+>>> try:
+...     print(matrix_mul([[1,2]], [[]]))
+... except Exception as e:
+...     print(e)
+...
+m_b can't be empty
+>>> try:
+...     print(matrix_mul([[1,2], []], [[1,2]]))
+... except Exception as e:
+...     print(e)
+...
+m_a can't be empty
+>>>
+>>>
+>>>
+>>> # Matrix is not list
+>>> # ==================
+>>> try:
+...     print(matrix_mul("Hello", [[1,2]]))
+... except Exception as e:
+...     print(e)
+...
+m_a must be a list
+>>> try:
+...     print(matrix_mul([[1]], "Hello"))
+... except Exception as e:
+...     print(e)
+...
+m_b must be a list
+>>>
+>>> # Matrix is not list of lists
+>>> try:
+...     print(matrix_mul([[1,2]], [[3,4], "[5,6]"]))
+... except Exception as e:
+...     print(e)
+...
+m_b must be a list of lists
+>>> try:
+...     print(matrix_mul([[1,2], (3,4)], [[]]))
+... except Exception as e:
+...     print(e)
+...
+m_a must be a list of lists
+>>>
+>>>
+>>>
+>>> # Matrix is not a list of integers
+>>> # ================================
+>>> try:
+...     print(matrix_mul([[1,2,"3"]], [[1,2]]))
+... except Exception as e:
+...     print(e)
+...
+m_a should contain only integers or floats
+>>> try:
+...     print(matrix_mul([[1,2]], [[[1],2]]))
+... except Exception as e:
+...     print(e)
+...
+m_b should contain only integers or floats
+>>>
+>>>
+>>>
+>>> # Matrix is not matrix
+>>> # ====================
+>>> try:
+...     print(matrix_mul([[1,2], [3,4,5]], [[1]]))
+... except Exception as e:
+...     print(e)
+...
+each row of m_a must be of the same size
+>>> try:
+...     print(matrix_mul([[0, -1], [4, -5]], [[9, -9], [3, 4.5], [4.5, 5.5, 6.5]]))
+... except Exception as e:
+...     print(e)
+...
+each row of m_b must be of the same size
+>>>
+>>>
+>>>
+>>> # Matrix is not multipliable
+>>> # ==========================
+>>> try:
+...     print(matrix_mul([[1,2], [3,4]], [[1,2,3,4]])) # Less rows
+... except Exception as e:
+...     print(e)
+...
+m_a and m_b can't be multiplied
+>>> try:
+...     print(matrix_mul([[1,2,3,-4]], [[1], [2], [3], [4], [5]])) # More rows
+... except Exception as e:
+...     print(e)
+...
+m_a and m_b can't be multiplied
+>>>
+>>>
+>>>
+>>> # Matrix is multipliable
+>>> # ======================
+>>> # Row vector multiplication
+>>> print(matrix_mul([[1,2,3]], [[2], [4], [6]]))
+[[28]]
+>>> # Column vector multiplication
+>>> print(matrix_mul([[-2.0], [-4.2], [6.2]], [[1, 1]]))
+[[-2.0, -2.0], [-4.2, -4.2], [6.2, 6.2]]
+>>> # Square matrix multiplication
+>>> print(matrix_mul([[1,2.5, 3], [3.2, 7, 8], [-5, 6, -7]], [[0, 0, 0], [1, 1, 1], [2, 2, 2]]))
+[[8.5, 8.5, 8.5], [23.0, 23.0, 23.0], [-8, -8, -8]]
+>>> # Float overflow
+>>> print(matrix_mul([[1, 1e308]], [[5, 4], [6, 7]]))
+[[inf, inf]]
+>>> # NaN
+>>> from math import nan
+>>> print(matrix_mul([[nan, 1]],  [[nan, 4, 7], [6, 8, nan]]))
+[[nan, nan, nan]]
+>>>
