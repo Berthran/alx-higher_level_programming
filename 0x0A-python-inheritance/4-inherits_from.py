@@ -13,7 +13,7 @@ def inherits_from(obj, a_class):
     '''
     returns True if the object is an instance of a class
     that inherited directly or indirectly fron the specified class
-    
+
     Parameters:
         obj: the object to check if its an instance of a subclass of
         the speicified object
