@@ -2,7 +2,7 @@
 '''A simple demonstration of Inheritance in Python
 
 Classes:
-    MyList: inherits from a list
+    MyList: inherits the attributes and methods in Python's list object
 '''
 
 
