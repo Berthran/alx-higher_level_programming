@@ -32,6 +32,15 @@ John must be an integer
 Amount must be an integer
 >>>
 >>>
+>>> # Value is string
+>>> try:
+...     bg.integer_validator("Amount", "fifty")
+... except Exception as e:
+...     print(e)
+...
+Amount must be an integer
+>>>
+>>>
 >>> # value is less than 0
 >>> try:
 ...     bg.integer_validator("age", -78)
