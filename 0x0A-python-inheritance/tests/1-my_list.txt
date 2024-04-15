@@ -1,0 +1,89 @@
+>>> MyList = __import__('1-my_list').MyList
+>>>
+>>> # create instance
+>>> mylist = MyList()
+>>>
+>>>
+>>> # Sort empty list
+>>> mylist = MyList()
+>>> mylist.print_sorted()
+[]
+>>>
+>>>
+>>> # Sort list with 1 element
+>>> mylist = MyList()
+>>> mylist.append(5)
+>>> mylist.print_sorted()
+[5]
+>>>
+>>>
+>>> 
+>>> # Sort already sorted number
+>>> nums = [1, 2, 3, 4]
+>>> for i in nums:
+...     mylist.append(i)
+...
+>>> print(mylist)
+[1, 2, 3, 4]
+>>> mylist.print_sorted()
+[1, 2, 3, 4]
+>>> print(mylist)
+[1, 2, 3, 4]
+>>>
+>>>
+>>> # Sort list with biggest number at the beginning
+>>> nums = [4, 3, 2, 1]
+>>> mylist = MyList()
+>>> for i in nums:
+...     mylist.append(i)
+...
+>>> print(mylist)
+[4, 3, 2, 1]
+>>> mylist.print_sorted()
+[1, 2, 3, 4]
+>>> print(mylist)
+[4, 3, 2, 1]
+>>>
+>>>
+>>> # Sort list with biggest number at the end
+>>> nums = [3, 1, 2, 4]
+>>> mylist = MyList()
+>>> for i in nums:
+...     mylist.append(i)
+...
+>>> print(mylist)
+[3, 1, 2, 4]
+>>> mylist.print_sorted()
+[1, 2, 3, 4]
+>>> print(mylist)
+[3, 1, 2, 4]
+>>>
+>>>
+>>> # Sort list with -ve and +ve numbers
+>>> nums = [-90, 8, -6, 0]
+>>> mylist = MyList()
+>>> for i in nums:
+...     mylist.append(i)
+...
+>>> print(mylist)
+[-90, 8, -6, 0]
+>>> mylist.print_sorted()
+[-90, -6, 0, 8]
+>>> print(mylist)
+[-90, 8, -6, 0]
+>>>
+>>>
+>>> # Sort list with only negative numbers
+>>> nums = [-1, -2, -4, -3]
+>>> mylist = MyList()
+>>> for i in nums:
+...     mylist.append(i)
+...
+>>> print(mylist)
+[-1, -2, -4, -3]
+>>> mylist.print_sorted()
+[-4, -3, -2, -1]
+>>> print(mylist)
+[-1, -2, -4, -3]
+>>>
+>>>
