@@ -26,13 +26,13 @@ class BaseGeometry:
 
     def integer_validator(self, name, value):
         '''
-        Validates a vaue
+        Validates a value
 
         Parameters:
             name: a string
             value: an integer value
         '''
-        if (type(value).__name__ != int.__name__):
+        if (type(value) is not int):
             raise TypeError("{} must be an integer".format(name))
         if (value <= 0):
             raise ValueError("{} must be greater than 0".format(name))
