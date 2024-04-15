@@ -1,4 +1,4 @@
->>> MyList = __import__('1-my_list').MyList>>> MyList = __import__('1-my_list').MyList
+>>> MyList = __import__('1-my_list').MyList
 >>>
 >>> # create instance
 >>> mylist = MyList()
@@ -20,6 +20,7 @@
 >>> 
 >>> # Sort already sorted number
 >>> nums = [1, 2, 3, 4]
+>>> mylist = MyList()
 >>> for i in nums:
 ...     mylist.append(i)
 ...
