@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 '''
-A simple demonstration of Inheritance in Python 
+A simple demonstration of Inheritance in Python
 
 Classes:
     MyList: inherits from a list
