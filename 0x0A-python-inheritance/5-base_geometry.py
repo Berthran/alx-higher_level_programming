@@ -1,4 +1,4 @@
-#!/usr.bin/python3
+#!/usr/bin/python3
 '''
 A module containing a base class that will serve as the
 the parent class from which other classes can inherit
