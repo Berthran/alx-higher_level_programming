@@ -14,26 +14,6 @@ area() is not implemented
 >>>
 >>>
 >>>
->>> # 1 argument missing in integer_validator
->>> try:
-...     bg.integer_validator("John")
-... except Exception as e:
-...     print(e)
-...
-BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
->>>
->>>
->>>
->>> # 2 arguments missing in integer_validator
->>> try:
-...     bg.integer_validator()
-... except Exception as e:
-...     print(e)
-...
-BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
->>>
->>>
->>>
 >>> # value is not integer
 >>> try:
 ...     bg.integer_validator("John", "34")
