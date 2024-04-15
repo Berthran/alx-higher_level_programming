@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 '''
-A module containing a BaseGeometry class that will serve as the parent class which other classes can inherit.
+A module containing a BaseGeometry class that will serve as the parent class
+which other classes can inherit.
 
 Classes:
     BaseGeometry: a class that defines basic features of geometric shapes
