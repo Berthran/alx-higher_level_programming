@@ -1,0 +1,45 @@
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+>>>
+>>> # create instance
+>>> bg = BaseGeometry()
+>>>
+>>>
+>>> # Area method
+>>> try:
+...     bg.area()
+... except Exception as e:
+...     print(e)
+...
+area() is not implemented
+>>>
+>>>
+>>> # value is not integer
+>>> try:
+...     bg.integer_validator("John", "34")
+... except Exception as e:
+...     print(e)
+...
+John must be an integer
+>>>
+>>>
+>>> # value is less than 0
+>>> try:
+...     bg.integer_validator("age", -78)
+... except Exception as e:
+...     print(e)
+...
+age must be greater than 0
+>>>
+>>>
+>>> # value is 0
+>>> try:
+...     bg.integer_validator("age", 0)
+... except Exception as e:
+...     print(e)
+...
+age must be greater than 0
+>>>
+>>>
+>>> # Value is greater than 0
+>>> bg.integer_validator("age", 90)
+>>>
