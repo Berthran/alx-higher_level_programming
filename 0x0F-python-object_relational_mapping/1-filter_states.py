@@ -52,10 +52,16 @@ def get_N_states():
     # Set cursor position
     cur = conn.cursor()
     query = "SELECT name FROM states WHERE name LIKE 'N%' ORDER BY id ASC"
-    cur.execute(query)
-    states = cur.fetchall()
-    for state in states:
-        print(state)
+    try:
+        cur.execute(query)
+        states = cur.fetchall()
+        for state in states:
+            print(state)
+    except Exception:
+        pass
+    finally:
+        cur.close()
+        conn.close()
 
 
 if __name__ == "__main__":
