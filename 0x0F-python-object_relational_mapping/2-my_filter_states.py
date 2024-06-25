@@ -39,7 +39,7 @@ def get_my_states():
         username = sys.argv[1]
         password = sys.argv[2]
         db_name = sys.argv[3]
-        st_name = sys.argv[4]
+        state_name = sys.argv[4]
     except Exception:
         exit()
 
@@ -53,9 +53,9 @@ def get_my_states():
 
     # Set cursor position
     cur = conn.cursor()
-    query = f"SELECT * FROM states WHERE name = '{st_name}' ORDER BY id ASC;"
+    query = "SELECT * FROM states WHERE BINARY name = '{}' ORDER BY id ASC;"
     try:
-        cur.execute(query)
+        cur.execute(query.format(state_name))
         states = cur.fetchall()
         for state in states:
             print(state)
