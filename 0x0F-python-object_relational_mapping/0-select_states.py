@@ -9,6 +9,22 @@ Functions:
 - get_all_states(host, user, password):
     Retrieves a list of all states from a MySQL database.
 
+Usage:
+This module requires the MySQLdb package and provides a function to
+fetch all states from a MySQL database.
+
+Example:
+import MySQLdb
+
+"""
+
+import sys
+import MySQLdb
+
+
+def get_all_states():
+    """Retrieves a list of all states from a MySQL database.
+
     Args:
         host (str): The hostname or IP address of the MySQL server.
         user (str): The username to connect to the MySQL server.
@@ -16,47 +32,30 @@ Functions:
 
     Returns:
         list: A list of strings representing all states.
-
-Usage:
-This module requires the MySQLdb package and provides a function to fetch all states from a MySQL database.
-
-Example:
-import MySQLdb
-
-# Fetch all states from the database
-states = MySQLdb.get_all_states('localhost', 'user', 'password')
-
-# Print the list of states
-print(states)
-"""
-
-import sqlalchemy
-import MySQLdb
-import sys
-
-def get_all_states():
-    username = sys.argv[0]
-    password = sys.argv[0]
-    db_name = sys.argv[0]
-
-    print(dir())
-    exit()
+    """
+    try:
+        username = sys.argv[1]
+        password = sys.argv[2]
+        db_name = sys.argv[3]
+    except Exception:
+        pass
 
     # Establish connection to a MySQL database
     conn = MySQLdb.connect(host="localhost",
-                              port=3306,
-                              user=username,
-                              passwd=password,
-                              db=db_name,
-                              charset="utf8")
+                           port=3306,
+                           user=username,
+                           passwd=password,
+                           db=db_name,
+                           charset="utf8")
 
     # Set cursor position
     cur = conn.cursor()
-    query = "SELECT * FROM states ORDER BY id ASC";
+    query = "SELECT * FROM states ORDER BY id ASC"
     cur.execute(query)
-    query_table = cur.fetchall()
-    for row in query_table:
-        print(row)
+    states = cur.fetchall()
+    for state in states:
+        print(state)
+
 
 if __name__ == "__main__":
     get_all_states()
