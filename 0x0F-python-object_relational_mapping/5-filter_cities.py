@@ -60,8 +60,13 @@ def get_my_cities():
     try:
         cur.execute(query.format(state_name))
         cities = cur.fetchall()
-        for city in cities:
-            print(city)
+        no_cities = len(cities)
+        for i in range(len(cities)):
+            city_as_string = ', '.join(map(str, cities[i]))
+            if (i < no_cities - 1):
+                print(city_as_string, end=", ")
+            else:
+                print(city_as_string)
     except Exception as e:
         print(e)
     finally:
