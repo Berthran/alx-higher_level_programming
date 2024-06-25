@@ -51,7 +51,7 @@ def get_N_states():
 
     # Set cursor position
     cur = conn.cursor()
-    query = "SELECT name FROM states WHERE name LIKE 'N%' ORDER BY id ASC"
+    query = "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC;"
     try:
         cur.execute(query)
         states = cur.fetchall()
