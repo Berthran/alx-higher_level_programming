@@ -1,7 +1,7 @@
 #!/usr/bin/node
 const request = require('request');
 const url = 'https://swapi-api.hbtn.io/api/films/';
-const charUrl = 'https://swapi-api.hbtn.io/api/people/18/';
+const charUrl = 'https://swapi-api.hbtn.io/api/people/18';
 let count = 0;
 
 // Making a GET request
