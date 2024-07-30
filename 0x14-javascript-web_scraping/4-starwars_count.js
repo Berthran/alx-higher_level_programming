@@ -7,7 +7,7 @@ let count = 0;
 // Making a GET request
 request(url, function (err, response, body) {
   if (err) {
-    console.error('code:', response.statusCode);
+    // Do nothing
   } else {
     for (let i = 0; i < JSON.parse(body).count; i++) {
       if (JSON.parse(body).results[i].characters.includes(charUrl)) {
