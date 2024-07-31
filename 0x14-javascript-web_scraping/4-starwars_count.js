@@ -15,7 +15,7 @@ request(url, function (err, response, body) {
       characters = JSON.parse(body).results[i].characters;
       for (let j = 0; j < characters.length; j++) {
         parts = characters[j].split('/');
-        if (parts[parts.length - 2] === "18") {
+        if (parts[parts.length - 2] === '18') {
           count++;
         }
       }
