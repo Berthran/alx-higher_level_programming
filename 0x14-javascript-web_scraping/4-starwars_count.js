@@ -1,31 +1,18 @@
-#!/usr/bin/node
-const request = require('request');
-const url = process.argv[2];
-let characters = {};
-let parts = [];
-// const charUrl = 'https://swapi-api.alx-tools.com/api/people/18/';
-let count = 0;
+// Write a script that prints the number of movies where the character “Wedge Antilles” is present.
+// The first argument is the API URL of the Star wars API: https://swapi-api.alx-tools.com/api/films/
+// Wedge Antilles is character ID 18 - your script must use this ID for filtering the result of the API
+// You must use the module request
 
-// Making a GET request
-request(url, function (err, response, body) {
-  if (err) {
-    // Do nothing
+const request = require('request');
+const apiUrl = 'https://swapi-api.alx-tools.com/api/films/';
+const characterId = 18;
+
+request(apiUrl, function (error, response, body) {
+  if (error) {
+    console.error('Error:', error);
   } else {
-    for (let i = 0; i < JSON.parse(body).count; i++) {
-      characters = JSON.parse(body).results[i].characters;
-      for (let j = 0; j < characters.length; j++) {
-        parts = characters[j].split('/');
-        if (parts[parts.length - 2] === '18') {
-          count++;
-        }
-      }
-      // if (parts[parts.length - 2] === '18') {
-      //  count++;
-      // }
-      // if (JSON.parse(body).results[i].characters.includes(charUrl)) {
-      //  count++;
-    }
+    const films = JSON.parse(body).results;
+    const moviesWithWedgeAntilles = films.filter(film => film.characters.includes(`https://swapi-api.alx-tools.com/api/people/${characterId}/`));
+    console.log(moviesWithWedgeAntilles.length);
   }
-  console.log(count);
-}
-);
+});
